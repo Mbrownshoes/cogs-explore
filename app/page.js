@@ -200,6 +200,8 @@ export default function Home(callback, deps) {
         const endPoint = coordinates[coordinates.length - 1];
 
         getTransectElevation(startPoint, endPoint).then((elevationData) => {
+          console.log(elevationData.filter((d) => d.elevation > 0));
+
           setTransectData(elevationData.filter((d) => d.elevation > 0));
           setShowChart(true);
         });
