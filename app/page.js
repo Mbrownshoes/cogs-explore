@@ -10,6 +10,7 @@ import { lineString, along } from "@turf/turf";
 import * as turf from "@turf/turf";
 
 import length from "@turf/length";
+import ElevationChart from "./chart.js"; // Adjust the import path as needed
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY2lyNTcwYzY5MDAwZWc3bm5ubTdzOWtzaiJ9.6QhxH6sQEgK634qO7a8MoQ";
@@ -35,6 +36,8 @@ export default function Home(callback, deps) {
   const requestRef = useRef();
   const [selectedLayer, setSelectedLayer] = useState(default_dataset);
   const [elevation, setElevation] = useState(null);
+  const [transectData, setTransectData] = useState(null);
+  const [showChart, setShowChart] = useState(false);
 
   const getElevation = async (lng, lat) => {
     // console.log(layers[selectedLayer]);
@@ -111,8 +114,9 @@ export default function Home(callback, deps) {
       });
       map.current.addControl(draw.current);
 
-      map.current.on("draw.create", getLineCoordinates);
-      map.current.on("draw.update", getLineCoordinates);
+      map.current.on("draw.create", handleDrawEvent);
+      map.current.on("draw.update", handleDrawEvent);
+      map.current.on("draw.delete", handleDeleteEvent);
 
       map.current.addSource("mapbox-dem", {
         type: "raster-dem",
@@ -183,7 +187,7 @@ export default function Home(callback, deps) {
       return elevationData;
     };
 
-    async function getLineCoordinates(e) {
+    function handleDrawEvent(e) {
       const data = draw.current.getAll();
       const lines = data.features.filter(
         (f) => f.geometry.type === "LineString"
@@ -195,13 +199,16 @@ export default function Home(callback, deps) {
         const startPoint = coordinates[0];
         const endPoint = coordinates[coordinates.length - 1];
 
-        console.log("Start point:", startPoint);
-        console.log("End point:", endPoint);
-
-        // Call your getTransectElevation function here
-        const transectData = await getTransectElevation(startPoint, endPoint);
-        console.log(transectData);
+        getTransectElevation(startPoint, endPoint).then((elevationData) => {
+          setTransectData(elevationData.filter((d) => d.elevation > 0));
+          setShowChart(true);
+        });
       }
+    }
+
+    function handleDeleteEvent() {
+      setTransectData(null);
+      setShowChart(false);
     }
     map.current.on("click", (e) => {
       const { lng, lat } = e.lngLat;
@@ -257,7 +264,26 @@ export default function Home(callback, deps) {
           </p>
         </div>
 
-        <div className="h-full z-0" ref={mapContainer} />
+        <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+          <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
+          {transectData && (
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "30%", // Adjust this value to control how much of the map the chart covers
+                backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
+                zIndex: 10, // Ensure the chart appears above the map
+                padding: "10px",
+                boxSizing: "border-box",
+              }}
+            >
+              <ElevationChart transectData={transectData} />
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );
