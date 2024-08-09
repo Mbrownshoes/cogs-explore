@@ -2,6 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import mapboxgl from "!mapbox-gl";
+import MapboxDraw from "@mapbox/mapbox-gl-draw";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+import { lineString, along } from "@turf/turf";
+import * as turf from "@turf/turf";
+
+import length from "@turf/length";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY2lyNTcwYzY5MDAwZWc3bm5ubTdzOWtzaiJ9.6QhxH6sQEgK634qO7a8MoQ";
@@ -18,6 +26,7 @@ const default_dataset = Object.keys(layers)[0];
 export default function Home(callback, deps) {
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const draw = useRef(null);
   const [lng, setLng] = useState(-124.6717);
   const [lat, setLat] = useState(50.9013);
   const [zoom, setZoom] = useState(12);
@@ -26,7 +35,10 @@ export default function Home(callback, deps) {
   const requestRef = useRef();
   const [selectedLayer, setSelectedLayer] = useState(default_dataset);
   const [elevation, setElevation] = useState(null);
+
   const getElevation = async (lng, lat) => {
+    // console.log(layers[selectedLayer]);
+
     const tilesetUrl =
       "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
     const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
@@ -47,6 +59,7 @@ export default function Home(callback, deps) {
       setElevation(null);
     }
   };
+
   const rotateCamera = (timestamp) => {
     if (!map.current) return;
     // clamp the rotation between 0 -360 degrees
@@ -89,6 +102,17 @@ export default function Home(callback, deps) {
     map.current.on("load", () => {
       // Start the animation.
       //   rotateCamera(0);
+      draw.current = new MapboxDraw({
+        displayControlsDefault: false,
+        controls: {
+          line_string: true,
+          trash: true,
+        },
+      });
+      map.current.addControl(draw.current);
+
+      map.current.on("draw.create", getLineCoordinates);
+      map.current.on("draw.update", getLineCoordinates);
 
       map.current.addSource("mapbox-dem", {
         type: "raster-dem",
@@ -118,17 +142,67 @@ export default function Home(callback, deps) {
         "building" // Place under labels, roads and buildings
       );
     });
-    // map.current.on("click", (e) => {
-    //   const features = map.current.queryRenderedFeatures(e.point);
-    //   console.log(e, e.lngLat);
-    //   console.log(features);
+    const getTransectElevation = async (
+      startPoint,
+      endPoint,
+      numSamples = 100
+    ) => {
+      const tilesetUrl =
+        "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
 
-    //   if (features.length > 0) {
-    //     // Get the pixel value from the raster layer
-    //     const pixelValue = features[0].properties.get("band1");
-    //     console.log("Pixel value:", pixelValue);
-    //   }
-    // });
+      // Create a line from start to end point
+      const line = lineString([startPoint, endPoint]);
+
+      const lineLength = length(line, { units: "kilometers" });
+
+      // Sample points along the line
+      const samplePoints = [];
+      for (let i = 0; i <= numSamples; i++) {
+        const point = turf.along(line, (lineLength / numSamples) * i, {
+          units: "kilometers",
+        });
+        samplePoints.push(point.geometry.coordinates);
+      }
+
+      // Fetch elevation for each point
+      const elevationData = await Promise.all(
+        samplePoints.map(async ([lng, lat]) => {
+          const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+            tilesetUrl
+          )}`;
+          const response = await fetch(url);
+          const data = await response.json();
+          return {
+            lng,
+            lat,
+            elevation: data.values[0],
+          };
+        })
+      );
+
+      return elevationData;
+    };
+
+    async function getLineCoordinates(e) {
+      const data = draw.current.getAll();
+      const lines = data.features.filter(
+        (f) => f.geometry.type === "LineString"
+      );
+
+      if (lines.length > 0) {
+        const line = lines[0];
+        const coordinates = line.geometry.coordinates;
+        const startPoint = coordinates[0];
+        const endPoint = coordinates[coordinates.length - 1];
+
+        console.log("Start point:", startPoint);
+        console.log("End point:", endPoint);
+
+        // Call your getTransectElevation function here
+        const transectData = await getTransectElevation(startPoint, endPoint);
+        console.log(transectData);
+      }
+    }
     map.current.on("click", (e) => {
       const { lng, lat } = e.lngLat;
       getElevation(lng, lat);
@@ -174,7 +248,7 @@ export default function Home(callback, deps) {
         </div>
 
         {/* Elevation display - now at top right */}
-        <div className="absolute top-4 right-4 z-10 bg-base-200 p-2 rounded-box">
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-base-200 p-2 rounded-box">
           <h3 className="label-text text-lg font-bold">Elevation</h3>
           <p className="label-text">
             {elevation !== null
