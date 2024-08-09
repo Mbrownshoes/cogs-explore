@@ -25,7 +25,28 @@ export default function Home(callback, deps) {
   const [bearing, setBearing] = useState(0);
   const requestRef = useRef();
   const [selectedLayer, setSelectedLayer] = useState(default_dataset);
+  const [elevation, setElevation] = useState(null);
+  const getElevation = async (lng, lat) => {
+    const tilesetUrl =
+      "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
+    const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+      tilesetUrl
+    )}`;
 
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      if (data && data.values && data.values.length > 0) {
+        const elevationValue = data.values[0];
+        setElevation(elevationValue);
+      } else {
+        setElevation(null);
+      }
+    } catch (error) {
+      console.error("Error fetching elevation data:", error);
+      setElevation(null);
+    }
+  };
   const rotateCamera = (timestamp) => {
     if (!map.current) return;
     // clamp the rotation between 0 -360 degrees
@@ -60,13 +81,14 @@ export default function Home(callback, deps) {
       setBearing(map.current.getBearing().toFixed(2));
     });
 
-    map.current.on("click", stopRotating);
+    // map.current.on("click", stopRotating);
+
     map.current.on("touchstart", stopRotating);
     map.current.on("contextmenu", stopRotating);
 
     map.current.on("load", () => {
       // Start the animation.
-      rotateCamera(0);
+      //   rotateCamera(0);
 
       map.current.addSource("mapbox-dem", {
         type: "raster-dem",
@@ -95,6 +117,21 @@ export default function Home(callback, deps) {
         },
         "building" // Place under labels, roads and buildings
       );
+    });
+    // map.current.on("click", (e) => {
+    //   const features = map.current.queryRenderedFeatures(e.point);
+    //   console.log(e, e.lngLat);
+    //   console.log(features);
+
+    //   if (features.length > 0) {
+    //     // Get the pixel value from the raster layer
+    //     const pixelValue = features[0].properties.get("band1");
+    //     console.log("Pixel value:", pixelValue);
+    //   }
+    // });
+    map.current.on("click", (e) => {
+      const { lng, lat } = e.lngLat;
+      getElevation(lng, lat);
     });
   });
 
@@ -135,6 +172,17 @@ export default function Home(callback, deps) {
             ))}
           </div>
         </div>
+
+        {/* Elevation display - now at top right */}
+        <div className="absolute top-4 right-4 z-10 bg-base-200 p-2 rounded-box">
+          <h3 className="label-text text-lg font-bold">Elevation</h3>
+          <p className="label-text">
+            {elevation !== null
+              ? `${elevation.toFixed(2)} meters`
+              : "Click on the map to get elevation"}
+          </p>
+        </div>
+
         <div className="h-full z-0" ref={mapContainer} />
       </div>
     </main>
