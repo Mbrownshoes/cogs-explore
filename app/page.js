@@ -40,8 +40,6 @@ export default function Home(callback, deps) {
   const [showChart, setShowChart] = useState(false);
 
   const getElevation = async (lng, lat) => {
-    // console.log(layers[selectedLayer]);
-
     const tilesetUrl =
       "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
     const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
