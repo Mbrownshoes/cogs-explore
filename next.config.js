@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
+  basePath: "/cogs-explore",
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/cogs-explore" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/cogs-explore/" : "",
+  reactStrictMode: true,
 };
+
+module.exports = nextConfig;
