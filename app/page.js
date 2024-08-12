@@ -11,9 +11,29 @@ import * as turf from "@turf/turf";
 
 import length from "@turf/length";
 import ElevationChart from "./chart.js"; // Adjust the import path as needed
+import D3Legend from "./legend.js";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY2lyNTcwYzY5MDAwZWc3bm5ubTdzOWtzaiJ9.6QhxH6sQEgK634qO7a8MoQ";
+
+const gistEarthColormap = [
+  "#000000",
+  "#1E2A41",
+  "#3C5282",
+  "#5A7AC3",
+  "#78A2E5",
+  "#96CBF8",
+  "#B4F3FF",
+  "#D2FFE7",
+  "#F0FFCF",
+  "#FFFFB7",
+  "#FFE89F",
+  "#FFD187",
+  "#FFBA6F",
+  "#FFA357",
+  "#FF8B3F",
+  "#FF7427",
+];
 
 const layers = {
   "Ortho Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
@@ -79,6 +99,7 @@ export default function Home(callback, deps) {
     cancelAnimationFrame(requestRef.current);
     requestRef.current = null;
   }, []);
+  const [stats, setStats] = useState({ min: 0, max: 2500 }); // Default values
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -224,6 +245,8 @@ export default function Home(callback, deps) {
   });
 
   const updateLayer = (newLayer) => {
+    console.log(selectedLayer);
+
     map.current.removeLayer(selectedLayer);
     map.current.addLayer(
       {
@@ -278,9 +301,18 @@ export default function Home(callback, deps) {
             </p>
           </div>
         )}
-
+        {selectedLayer === "DEM Apr. '21" && (
+          <div className="absolute bottom-2 left-1/4 transform -translate-x-1/2 z-10 bg-white p-2 rounded-box shadow-md">
+            <D3Legend
+              min={stats.min}
+              max={stats.max}
+              colormap={gistEarthColormap}
+            />
+          </div>
+        )}
         <div style={{ position: "relative", width: "100%", height: "100vh" }}>
           <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
+
           {transectData && (
             <div
               style={{
