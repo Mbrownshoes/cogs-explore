@@ -38,6 +38,7 @@ export default function Home(callback, deps) {
   const [elevation, setElevation] = useState(null);
   const [transectData, setTransectData] = useState(null);
   const [showChart, setShowChart] = useState(false);
+  const [showDrawHelper, setShowDrawHelper] = useState(false);
 
   const getElevation = async (lng, lat) => {
     const tilesetUrl =
@@ -110,7 +111,8 @@ export default function Home(callback, deps) {
           trash: true,
         },
       });
-      map.current.addControl(draw.current);
+      map.current.addControl(draw.current, "top-right");
+      setShowDrawHelper(true);
 
       map.current.on("draw.create", handleDrawEvent);
       map.current.on("draw.update", handleDrawEvent);
@@ -144,6 +146,7 @@ export default function Home(callback, deps) {
         "building" // Place under labels, roads and buildings
       );
     });
+
     const getTransectElevation = async (
       startPoint,
       endPoint,
@@ -214,6 +217,8 @@ export default function Home(callback, deps) {
       const { lng, lat } = e.lngLat;
       getElevation(lng, lat);
     });
+
+    // });
   });
 
   const updateLayer = (newLayer) => {
@@ -255,14 +260,22 @@ export default function Home(callback, deps) {
         </div>
 
         {/* Elevation display - now at top right */}
-        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-base-200 p-2 rounded-box">
+        <div className="absolute top-2 left-1/3 transform -translate-x-1/2 z-10 bg-base-200 p-2 rounded-box">
           <h3 className="label-text text-lg font-bold">Elevation</h3>
           <p className="label-text">
-            {elevation !== null
+            {elevation !== null && elevation > 0
               ? `${elevation.toFixed(2)} meters`
-              : "Click on the map to get elevation"}
+              : "Click for elevation"}
           </p>
         </div>
+        {/* Draw helper text */}
+        {showDrawHelper && (
+          <div className="absolute top-2 right-10 z-10 bg-base-200 p-2 rounded-box">
+            <p className="label-text">
+              Draw a line to measure elevation change
+            </p>
+          </div>
+        )}
 
         <div style={{ position: "relative", width: "100%", height: "100vh" }}>
           <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
