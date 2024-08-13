@@ -236,7 +236,7 @@ export default function Home(callback, deps) {
       setTransectData(null);
       setShowChart(false);
     }
-    map.current.on("click", (e) => {
+    map.current.on("mousemove", (e) => {
       const { lng, lat } = e.lngLat;
       getElevation(lng, lat);
     });
@@ -290,7 +290,7 @@ export default function Home(callback, deps) {
           <p className="label-text">
             {elevation !== null && elevation > 0
               ? `${elevation.toFixed(2)} meters`
-              : "Click for elevation"}
+              : "Hover for elevation"}
           </p>
         </div>
         {/* Draw helper text */}
