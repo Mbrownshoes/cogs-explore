@@ -1,0 +1,19 @@
+{
+    "mosaicjson": "0.0.2",
+    "tiles": {
+        "0": [
+            "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif",
+            "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif"
+        ]
+    },
+    "tile_scale": 2,
+    "tile_size": 256,
+    "bounds": [
+        -122.68082172543296,
+        50.390102,
+        -122.55509088416154,
+        50.4608313
+    ],
+    "minzoom": 0,
+    "maxzoom": 24
+}

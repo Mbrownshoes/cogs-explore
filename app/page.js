@@ -34,24 +34,30 @@ const gistEarthColormap = [
   "#FF8B3F",
   "#FF7427",
 ];
+// const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+const mosaicJsonUrl =
+  "https://gist.githubusercontent.com/Mbrownshoes/92ccda216d53db9f20a8f2b4c3a60b58/raw/b8c238a7e53bea1d185b7704d6e5960ac459b925/mosaic.json";
 
 const layers = {
-  "Ortho Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
-  "DEM Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif`,
-  "HS Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=hillshade&algorithm_params={"angle_altitude":45}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif`,
-  "Countour Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=contours&algorithm_params={"increment":100,"thickness":1,"minz":0,"maxz":2500}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif`,
+  "Ortho 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_PlaceGlacier_wgs84utm10_Ortho_COG.tif`,
+  "DEM 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
+  "HS 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=hillshade&algorithm_params={"angle_altitude":45}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
+  "Countour 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=contours&algorithm_params={"increment":100,"thickness":1,"minz":0,"maxz":2500}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
 
-  "Ortho Jul. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_02_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
-  "Ortho Oct. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_03_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
+  "Ortho 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_ORTHO_WGS84_UTM10_Ellips_cog.tif`,
+
+  "DEM 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif`,
+  // "Change detection": `https://goose.hakai.org/titiler/mosaicjson/tiles/{z}/{x}/{y}.tif?url=${encodeURIComponent(
+  //   mosaicJsonUrl
+  // )}&expression=subtract(assets[0], assets[1])&asset_bidx=1,1&colormap_name=gist_earth&rescale=-100,100`,
 };
 const default_dataset = Object.keys(layers)[0];
-
 export default function Home(callback, deps) {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const draw = useRef(null);
-  const [lng, setLng] = useState(-124.6717);
-  const [lat, setLat] = useState(50.9013);
+  const [lng, setLng] = useState(-122.595414);
+  const [lat, setLat] = useState(50.381554);
   const [zoom, setZoom] = useState(12);
   const [pitch, setPitch] = useState(60);
   const [bearing, setBearing] = useState(0);
@@ -62,9 +68,12 @@ export default function Home(callback, deps) {
   const [showChart, setShowChart] = useState(false);
   const [showDrawHelper, setShowDrawHelper] = useState(false);
 
+  const tilesetUrl =
+    selectedLayer === ("DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
+      ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif"
+      : "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif";
+
   const getElevation = async (lng, lat) => {
-    const tilesetUrl =
-      "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
     const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
       tilesetUrl
     )}`;
@@ -169,15 +178,14 @@ export default function Home(callback, deps) {
         "building" // Place under labels, roads and buildings
       );
     });
-
+    map.current.on("error", (e) => {
+      console.error("Map error:", e.error);
+    });
     const getTransectElevation = async (
       startPoint,
       endPoint,
       numSamples = 100
     ) => {
-      const tilesetUrl =
-        "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
-
       // Create a line from start to end point
       const line = lineString([startPoint, endPoint]);
 
