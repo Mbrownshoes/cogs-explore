@@ -360,7 +360,7 @@ export default function Home(callback, deps) {
                       name="radio-10"
                       className="radio checked:bg-red-500"
                       checked={layer === selectedLayer}
-                      onClick={() => updateLayer(layer)}
+                      onChange={() => updateLayer(layer)}
                     />
                   </label>
                 </div>
@@ -388,7 +388,7 @@ export default function Home(callback, deps) {
             </p>
           </div>
         )}
-        {selectedLayer === "DEM Apr. '21" && (
+        {typeof selectedLayer === "string" && selectedLayer.includes("DEM") && (
           <div className="absolute bottom-2 left-1/4 transform -translate-x-1/2 z-10 bg-white p-2 rounded-box shadow-md">
             <D3Legend
               min={stats.min}
