@@ -97,7 +97,7 @@ export default function Home(callback, deps) {
       ? setSelectedLayer(default_dataset)
       : setSelectedLayer(Object.keys(layersForSelectedSite)[0]);
     setSelectedSite(site);
-    // You can add additional logic here, such as updating the UI or fetching data for the selected site
+    handleDeleteEvent();
   };
 
   function getCoordsForSite(siteName) {
@@ -168,7 +168,10 @@ export default function Home(callback, deps) {
     requestRef.current = null;
   }, []);
   const [stats, setStats] = useState({ min: 0, max: 2500 }); // Default values
-
+  function handleDeleteEvent() {
+    setTransectData(null);
+    setShowChart(false);
+  }
   useEffect(() => {
     if (map.current) {
       // If a map already exists, remove it before creating a new one
@@ -302,10 +305,6 @@ export default function Home(callback, deps) {
       }
     }
 
-    function handleDeleteEvent() {
-      setTransectData(null);
-      setShowChart(false);
-    }
     map.current.on("mousemove", (e) => {
       const { lng, lat } = e.lngLat;
       getElevation(lng, lat);
