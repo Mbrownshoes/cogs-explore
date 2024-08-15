@@ -35,23 +35,44 @@ const gistEarthColormap = [
   "#FF7427",
 ];
 // const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
-const mosaicJsonUrl =
-  "https://gist.githubusercontent.com/Mbrownshoes/92ccda216d53db9f20a8f2b4c3a60b58/raw/b8c238a7e53bea1d185b7704d6e5960ac459b925/mosaic.json";
+// const mosaicJsonUrl =
+//   "https://gist.githubusercontent.com/Mbrownshoes/92ccda216d53db9f20a8f2b4c3a60b58/raw/b8c238a7e53bea1d185b7704d6e5960ac459b925/mosaic.json";
+const siteData = {
+  ElliotCreekLandslide: {
+    name: "Elliot Creek",
+    layers: {
+      "Ortho Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
+      "DEM Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif`,
+      "HS Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=hillshade&algorithm_params={"angle_altitude":45}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif`,
+      "Countour Apr. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=contours&algorithm_params={"increment":100,"thickness":1,"minz":0,"maxz":2500}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif`,
 
-const layers = {
-  "Ortho 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_PlaceGlacier_wgs84utm10_Ortho_COG.tif`,
-  "DEM 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
-  "HS 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=hillshade&algorithm_params={"angle_altitude":45}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
-  "Countour 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=contours&algorithm_params={"increment":100,"thickness":1,"minz":0,"maxz":2500}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
+      "Ortho Jul. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_02_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
+      "Ortho Oct. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_03_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
+    },
+    lngLat: [-124.6717, 50.9013],
+  },
+  PlaceGlacier: {
+    name: "Place Glacier",
+    layers: {
+      "Ortho 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_PlaceGlacier_wgs84utm10_Ortho_COG.tif`,
+      "DEM 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
+      "HS 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=hillshade&algorithm_params={"angle_altitude":45}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
+      "Countour 1": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?algorithm=contours&algorithm_params={"increment":100,"thickness":1,"minz":0,"maxz":2500}&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif`,
 
-  "Ortho 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_ORTHO_WGS84_UTM10_Ellips_cog.tif`,
+      "Ortho 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_ORTHO_WGS84_UTM10_Ellips_cog.tif`,
 
-  "DEM 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif`,
-  // "Change detection": `https://goose.hakai.org/titiler/mosaicjson/tiles/{z}/{x}/{y}.tif?url=${encodeURIComponent(
-  //   mosaicJsonUrl
-  // )}&expression=subtract(assets[0], assets[1])&asset_bidx=1,1&colormap_name=gist_earth&rescale=-100,100`,
+      "DEM 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif`,
+    },
+    lngLat: [-122.62, 50.389],
+  },
 };
-const default_dataset = Object.keys(layers)[0];
+
+const siteAliases = {
+  "Place Glacier": "PlaceGlacier",
+  "Elliot Creek": "ElliotCreekLandslide",
+};
+
+// const default_dataset = Object.keys(layers)[0];
 export default function Home(callback, deps) {
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -62,16 +83,54 @@ export default function Home(callback, deps) {
   const [pitch, setPitch] = useState(60);
   const [bearing, setBearing] = useState(0);
   const requestRef = useRef();
-  const [selectedLayer, setSelectedLayer] = useState(default_dataset);
   const [elevation, setElevation] = useState(null);
   const [transectData, setTransectData] = useState(null);
   const [showChart, setShowChart] = useState(false);
   const [showDrawHelper, setShowDrawHelper] = useState(false);
 
+  const [selectedSite, setSelectedSite] = useState("Place Glacier");
+
+  const sites = ["Place Glacier", "Elliot Creek"];
+  // setSelectedSite("Place Glacier");
+  const handleSiteSelection = (site) => {
+    site === "Place Glacier"
+      ? setSelectedLayer(default_dataset)
+      : setSelectedLayer(Object.keys(layersForSelectedSite)[0]);
+    setSelectedSite(site);
+    // You can add additional logic here, such as updating the UI or fetching data for the selected site
+  };
+
+  function getCoordsForSite(siteName) {
+    const siteKey = siteAliases[siteName] || siteName;
+    return siteData[siteKey]?.lngLat || {};
+  }
+  function getLayersForSite(siteName) {
+    const siteKey = siteAliases[siteName] || siteName;
+    return siteData[siteKey]?.layers || {};
+  }
+  const [layersForSelectedSite, setLayersForSelectedSite] = useState({});
+  const [selectedLayer, setSelectedLayer] = useState({});
+  useEffect(() => {
+    console.log(selectedSite);
+
+    const layers = getLayersForSite(selectedSite);
+    setLayersForSelectedSite(layers);
+    setSelectedLayer(Object.keys(layers)[0]);
+  }, [selectedSite]);
+
+  const CoordsForSelectedSite = getCoordsForSite(selectedSite);
+
+  const default_dataset = Object.keys(layersForSelectedSite)[0];
+  // const [selectedLayer, setSelectedLayer] = useState(default_dataset);
+
   const tilesetUrl =
-    selectedLayer === ("DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
+    selectedSite === "Place Glacier" &&
+    (selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
       ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif"
-      : "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif";
+      : selectedSite === "Place Glacier" &&
+        (!selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
+      ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif"
+      : "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
 
   const getElevation = async (lng, lat) => {
     const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
@@ -111,15 +170,19 @@ export default function Home(callback, deps) {
   const [stats, setStats] = useState({ min: 0, max: 2500 }); // Default values
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
+    if (map.current) {
+      // If a map already exists, remove it before creating a new one
+      map.current.remove();
+    }
+    // if (map.current) return; // initialize map only once
+
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [lng, lat],
+      center: [CoordsForSelectedSite[0], CoordsForSelectedSite[1]],
       zoom: zoom,
       pitch: pitch,
     });
-
     map.current.on("move", () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
@@ -159,8 +222,9 @@ export default function Home(callback, deps) {
       // add the DEM source as a terrain layer with exaggerated height
       map.current.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
 
-      Object.keys(layers).forEach((layer) => {
-        const source = layers[layer];
+      Object.keys(layersForSelectedSite).forEach((layer) => {
+        const source = layersForSelectedSite[layer];
+
         map.current.addSource(layer, {
           type: "raster",
           tiles: [source],
@@ -232,8 +296,6 @@ export default function Home(callback, deps) {
         const endPoint = coordinates[coordinates.length - 1];
 
         getTransectElevation(startPoint, endPoint).then((elevationData) => {
-          console.log(elevationData.filter((d) => d.elevation > 0));
-
           setTransectData(elevationData.filter((d) => d.elevation > 0));
           setShowChart(true);
         });
@@ -248,13 +310,9 @@ export default function Home(callback, deps) {
       const { lng, lat } = e.lngLat;
       getElevation(lng, lat);
     });
-
-    // });
-  });
+  }, [selectedSite, layersForSelectedSite]);
 
   const updateLayer = (newLayer) => {
-    console.log(selectedLayer);
-
     map.current.removeLayer(selectedLayer);
     map.current.addLayer(
       {
@@ -265,6 +323,7 @@ export default function Home(callback, deps) {
       },
       "building" // Place under labels, roads and buildings
     );
+
     setSelectedLayer(newLayer);
   };
 
@@ -273,23 +332,43 @@ export default function Home(callback, deps) {
       <div className="absolute top-0 bottom-0 left-0 right-0">
         {/*Layer radio selector*/}
         <div className="absolute top-0 left-0 m-4 z-10">
+          <div className="mt-4 bg-base-200 p-2 rounded-box">
+            <h3 className="label-text text-lg font-bold">Select a Site</h3>
+            <div className="flex flex-col">
+              {sites.map((site) => (
+                <button
+                  key={site}
+                  onClick={() => handleSiteSelection(site)}
+                  className={`btn btn-sm m-1 ${
+                    selectedSite === site ? "btn-primary" : "btn-ghost"
+                  }`}
+                >
+                  {site}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="flex flex-col bg-base-200 w-40 p-2 rounded-box">
             <h3 className="label-text text-lg font-bold">Layers</h3>
-            {Object.keys(layers).map((layer) => (
-              <div key={layer} className="form-control">
-                <label className="label cursor-pointer">
-                  <span className="label-text">{layer}</span>
-                  <input
-                    type="radio"
-                    name="radio-10"
-                    className="radio checked:bg-red-500"
-                    checked={layer === selectedLayer}
-                    onClick={() => updateLayer(layer)}
-                  />
-                </label>
-              </div>
-            ))}
+            {Object.keys(layersForSelectedSite).map((layer) => {
+              return (
+                <div key={layer} className="form-control">
+                  <label className="label cursor-pointer">
+                    <span className="label-text">{layer}</span>
+                    <input
+                      type="radio"
+                      name="radio-10"
+                      className="radio checked:bg-red-500"
+                      checked={layer === selectedLayer}
+                      onClick={() => updateLayer(layer)}
+                    />
+                  </label>
+                </div>
+              );
+            })}
           </div>
+
+          {/* Site Selector */}
         </div>
 
         {/* Elevation display - now at top right */}
