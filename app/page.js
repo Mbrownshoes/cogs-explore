@@ -128,7 +128,7 @@ export default function Home(callback, deps) {
     (selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
       ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif"
       : selectedSite === "Place Glacier" &&
-        (!selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
+        (!selectedLayer !== "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
       ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif"
       : "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
 
@@ -267,18 +267,37 @@ export default function Home(callback, deps) {
         samplePoints.push(point.geometry.coordinates);
       }
 
-      // Fetch elevation for each point
+      // Define both URLs
+      const url1 =
+        "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif";
+      const url2 =
+        "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif";
+      // Fetch elevation for each point from both URLs
       const elevationData = await Promise.all(
         samplePoints.map(async ([lng, lat]) => {
-          const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
-            tilesetUrl
+          const fetchUrl1 = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+            url1
           )}`;
-          const response = await fetch(url);
-          const data = await response.json();
+          const fetchUrl2 = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+            url2
+          )}`;
+
+          const [response1, response2] = await Promise.all([
+            fetch(fetchUrl1),
+            fetch(fetchUrl2),
+          ]);
+
+          const [data1, data2] = await Promise.all([
+            response1.json(),
+            response2.json(),
+          ]);
+
           return {
             lng,
             lat,
-            elevation: data.values[0],
+            elevation1: data1.values[0],
+            elevation2: data2.values[0],
+            elevationDiff: data2.values[0] - data1.values[0],
           };
         })
       );
@@ -299,7 +318,11 @@ export default function Home(callback, deps) {
         const endPoint = coordinates[coordinates.length - 1];
 
         getTransectElevation(startPoint, endPoint).then((elevationData) => {
-          setTransectData(elevationData.filter((d) => d.elevation > 0));
+          // console.log(elevationData);
+
+          setTransectData(
+            elevationData.filter((d) => d.elevation1 > 0 && d.elevation2 > 0)
+          );
           setShowChart(true);
         });
       }
@@ -400,21 +423,44 @@ export default function Home(callback, deps) {
           <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
 
           {transectData && (
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: "30%", // Adjust this value to control how much of the map the chart covers
-                backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
-                zIndex: 10, // Ensure the chart appears above the map
-                padding: "10px",
-                boxSizing: "border-box",
-              }}
-            >
-              <ElevationChart transectData={transectData} />
-            </div>
+            <>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "15%", // Position it above the second chart
+                  left: 0,
+                  right: 0,
+                  height: "15%",
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  zIndex: 10,
+                  padding: "10px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <ElevationChart
+                  transectData={transectData}
+                  varToPlot={"elevation1"}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "15%",
+                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  zIndex: 10,
+                  padding: "10px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <ElevationChart
+                  transectData={transectData}
+                  varToPlot={"elevationDiff"}
+                />
+              </div>
+            </>
           )}
         </div>
       </div>

@@ -1,11 +1,40 @@
 import React, { useEffect, useRef } from "react";
 import * as Plot from "@observablehq/plot";
 
-function ElevationChart({ transectData }) {
+function ElevationChart({ transectData, varToPlot }) {
   const chartRef = useRef();
 
   useEffect(() => {
-    if (transectData && transectData.length > 0) {
+    if (
+      transectData &&
+      transectData.length > 0 &&
+      varToPlot === "elevationDiff"
+    ) {
+      const chart = Plot.plot({
+        width: chartRef.current.clientWidth,
+        height: chartRef.current.clientHeight,
+        y: {
+          label: "Elevation change(m)",
+        },
+        marks: [
+          Plot.line(transectData, {
+            x: (d, i) => i,
+            y: varToPlot,
+            stroke: "orange",
+          }),
+          //   Plot.ruleY([0]),
+        ],
+      });
+
+      chartRef.current.innerHTML = "";
+      chartRef.current.append(chart);
+
+      return () => chart.remove();
+    } else if (
+      transectData &&
+      transectData.length > 0 &&
+      varToPlot === "elevation1"
+    ) {
       const chart = Plot.plot({
         width: chartRef.current.clientWidth,
         height: chartRef.current.clientHeight,
@@ -15,9 +44,14 @@ function ElevationChart({ transectData }) {
         marks: [
           Plot.line(transectData, {
             x: (d, i) => i,
-            y: "elevation",
+            y: "elevation1",
+            stroke: "blue",
           }),
-          //   Plot.ruleY([0]),
+          Plot.line(transectData, {
+            x: (d, i) => i,
+            y: "elevation2",
+            stroke: "red",
+          }),
         ],
       });
 
