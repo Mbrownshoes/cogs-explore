@@ -50,6 +50,10 @@ const siteData = {
       "Ortho Oct. '21": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_03_ElliotCreekLandslide_ORTHO_CSRS_UTM10_HTv2_cog.tif`,
     },
     lngLat: [-124.6717, 50.9013],
+    bounds: [
+      -124.83764648437511, 50.831529285350065, -124.55749511718761,
+      50.9999288558598,
+    ],
   },
   PlaceGlacier: {
     name: "Place Glacier",
@@ -64,6 +68,10 @@ const siteData = {
       "DEM 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif`,
     },
     lngLat: [-122.62, 50.389],
+    bounds: [
+      -122.67754493594516, 50.38855515565575, -122.54698332988868,
+      50.46361196092505,
+    ],
   },
 };
 
@@ -104,6 +112,10 @@ export default function Home(callback, deps) {
     const siteKey = siteAliases[siteName] || siteName;
     return siteData[siteKey]?.lngLat || {};
   }
+  function getBoundsForSite(siteName) {
+    const siteKey = siteAliases[siteName] || siteName;
+    return siteData[siteKey]?.bounds || {};
+  }
   function getLayersForSite(siteName) {
     const siteKey = siteAliases[siteName] || siteName;
     return siteData[siteKey]?.layers || {};
@@ -119,6 +131,7 @@ export default function Home(callback, deps) {
   }, [selectedSite]);
 
   const CoordsForSelectedSite = getCoordsForSite(selectedSite);
+  const BoundsForSelectedSite = getBoundsForSite(selectedSite);
 
   const default_dataset = Object.keys(layersForSelectedSite)[0];
   // const [selectedLayer, setSelectedLayer] = useState(default_dataset);
@@ -182,9 +195,14 @@ export default function Home(callback, deps) {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [CoordsForSelectedSite[0], CoordsForSelectedSite[1]],
+      // center: [CoordsForSelectedSite[0], CoordsForSelectedSite[1]],
       zoom: zoom,
       pitch: pitch,
+    });
+    map.current.fitBounds(BoundsForSelectedSite, {
+      // padding: 20, // Add some padding around the bounds
+      duration: 0, // Animation duration in milliseconds
+      pitch: 60,
     });
     map.current.on("move", () => {
       setLng(map.current.getCenter().lng.toFixed(4));
@@ -244,6 +262,16 @@ export default function Home(callback, deps) {
         },
         "building" // Place under labels, roads and buildings
       );
+      console.log(selectedLayer);
+
+      // map.current.on("idle", () => {
+      //   // Fit the map to the raster bounds
+      //   map.current.fitBounds(BoundsForSelectedSite, {
+      //     padding: 20, // Add some padding around the bounds
+      //     duration: 1000, // Animation duration in milliseconds
+      //     pitch: 60,
+      //   });
+      // });
     });
     map.current.on("error", (e) => {
       console.error("Map error:", e.error);
