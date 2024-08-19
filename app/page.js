@@ -282,9 +282,13 @@ export default function Home(callback, deps) {
     setTransectData(null);
     setShowChart(false);
   }
+  console.log(compareChangeEnabled);
 
   const handleDrawEvent = useCallback(
     (e) => {
+      setShowChart(false);
+      console.log(compareChangeEnabled);
+
       const data = draw.current.getAll();
       const lines = data.features.filter(
         (f) => f.geometry.type === "LineString"
@@ -441,15 +445,9 @@ export default function Home(callback, deps) {
 
   // Effect for setting up initial draw event listener
   useEffect(() => {
-    console.log(tilesetUrl);
-    console.log(draw.current);
-
     if (map.current && draw.current) {
-      console.log("run");
-
       const initialHandleDrawEvent = (e) => {
         const data = draw.current.getAll();
-        console.log(data);
 
         const lines = data.features.filter(
           (f) => f.geometry.type === "LineString"
@@ -480,7 +478,7 @@ export default function Home(callback, deps) {
         map.current.on("draw.delete", handleDeleteEvent);
       };
     }
-  }, [draw.current, selectedSite]); // Empty dependency array ensures this runs once on mount
+  }, [draw.current, selectedSite]);
 
   // Effect for updating draw event listener when compareChangeEnabled changes
   useEffect(() => {
@@ -512,7 +510,9 @@ export default function Home(callback, deps) {
     setSelectedLayer(newLayer);
   };
   // console.log(compareChangeEnabled);
-
+  // useEffect(() => {
+  //   handleDeleteEvent();
+  // }, [compareChangeEnabled]);
   return (
     <main className="w-screen min-h-screen">
       <div className="absolute top-0 bottom-0 left-0 right-0">
@@ -607,7 +607,7 @@ export default function Home(callback, deps) {
                     left: 0,
                     right: 0,
                     height: "15%",
-                    backgroundColor: "rgba(255, 255, 255, 0.8)",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
                     zIndex: 10,
                     padding: "10px",
                     boxSizing: "border-box",
@@ -625,7 +625,7 @@ export default function Home(callback, deps) {
                     left: 0,
                     right: 0,
                     height: "15%",
-                    backgroundColor: "rgba(255, 255, 255, 0.8)",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
                     zIndex: 10,
                     padding: "10px",
                     boxSizing: "border-box",
@@ -645,7 +645,7 @@ export default function Home(callback, deps) {
                   left: 0,
                   right: 0,
                   height: "15%",
-                  backgroundColor: "rgba(255, 255, 255, 0.8)",
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
                   zIndex: 10,
                   padding: "10px",
                   boxSizing: "border-box",
