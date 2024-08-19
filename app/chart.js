@@ -6,9 +6,10 @@ function ElevationChart({ transectData, varToPlot }) {
 
   useEffect(() => {
     if (
-      transectData &&
-      transectData.length > 0 &&
-      varToPlot === "elevationDiff"
+      (transectData &&
+        transectData.length > 0 &&
+        varToPlot === "elevationDiff") ||
+      varToPlot === "elevation"
     ) {
       const chart = Plot.plot({
         width: chartRef.current.clientWidth,
