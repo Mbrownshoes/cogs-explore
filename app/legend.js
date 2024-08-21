@@ -9,7 +9,7 @@ const D3Legend = ({ min, max, colormap }) => {
 
     const width = 200;
     const height = 50;
-    const marginRight = 60;
+    const marginRight = 10;
     const marginLeft = 10;
     const barHeight = 15;
 

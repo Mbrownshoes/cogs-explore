@@ -80,6 +80,115 @@ const siteAliases = {
   "Elliot Creek": "ElliotCreekLandslide",
 };
 
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+const getTransectElevation = async (
+  startPoint,
+  endPoint,
+  tilesetUrl,
+  numSamples = 100
+) => {
+  console.log(startPoint, endPoint, tilesetUrl);
+
+  // Create a line from start to end point
+  const line = lineString([startPoint, endPoint]);
+
+  const lineLength = length(line, { units: "kilometers" });
+
+  // Sample points along the line
+  const samplePoints = [];
+  for (let i = 0; i <= numSamples; i++) {
+    const point = turf.along(line, (lineLength / numSamples) * i, {
+      units: "kilometers",
+    });
+    samplePoints.push(point.geometry.coordinates);
+  }
+
+  // Fetch elevation for each point
+  const elevationData = await Promise.all(
+    samplePoints.map(async ([lng, lat]) => {
+      const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+        tilesetUrl
+      )}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      return {
+        lng,
+        lat,
+        elevation: data.values[0],
+      };
+    })
+  );
+
+  return elevationData;
+};
+
+const getTransectElevationDiff = async (
+  startPoint,
+  endPoint,
+  numSamples = 100
+) => {
+  // Create a line from start to end point
+  const line = lineString([startPoint, endPoint]);
+
+  const lineLength = length(line, { units: "kilometers" });
+
+  // Sample points along the line
+  const samplePoints = [];
+  for (let i = 0; i <= numSamples; i++) {
+    const point = turf.along(line, (lineLength / numSamples) * i, {
+      units: "kilometers",
+    });
+    samplePoints.push(point.geometry.coordinates);
+  }
+
+  // Define both URLs
+  const url1 =
+    "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif";
+  const url2 =
+    "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif";
+  // Fetch elevation for each point from both URLs
+  const elevationData = await Promise.all(
+    samplePoints.map(async ([lng, lat]) => {
+      const fetchUrl1 = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+        url1
+      )}`;
+      const fetchUrl2 = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
+        url2
+      )}`;
+
+      const [response1, response2] = await Promise.all([
+        fetch(fetchUrl1),
+        fetch(fetchUrl2),
+      ]);
+
+      const [data1, data2] = await Promise.all([
+        response1.json(),
+        response2.json(),
+      ]);
+
+      return {
+        lng,
+        lat,
+        elevation1: data1.values[0],
+        elevation2: data2.values[0],
+        elevationDiff: data2.values[0] - data1.values[0],
+      };
+    })
+  );
+
+  return elevationData;
+};
 // const default_dataset = Object.keys(layers)[0];
 export default function Home(callback, deps) {
   const mapContainer = useRef(null);
@@ -97,6 +206,7 @@ export default function Home(callback, deps) {
   const [showDrawHelper, setShowDrawHelper] = useState(false);
 
   const [selectedSite, setSelectedSite] = useState("Place Glacier");
+  const [compareChangeEnabled, setCompareChangeEnabled] = useState(false);
 
   const sites = ["Place Glacier", "Elliot Creek"];
   // setSelectedSite("Place Glacier");
@@ -141,7 +251,7 @@ export default function Home(callback, deps) {
     (selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
       ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif"
       : selectedSite === "Place Glacier" &&
-        (!selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
+        (!selectedLayer !== "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
       ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif"
       : "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
 
@@ -185,6 +295,46 @@ export default function Home(callback, deps) {
     setTransectData(null);
     setShowChart(false);
   }
+  console.log(compareChangeEnabled);
+
+  const handleDrawEvent = useCallback(
+    (e) => {
+      setShowChart(false);
+      console.log(compareChangeEnabled);
+
+      const data = draw.current.getAll();
+      const lines = data.features.filter(
+        (f) => f.geometry.type === "LineString"
+      );
+
+      if (lines.length > 0) {
+        const line = lines[0];
+        const coordinates = line.geometry.coordinates;
+        const startPoint = coordinates[0];
+        const endPoint = coordinates[coordinates.length - 1];
+
+        if (compareChangeEnabled) {
+          getTransectElevationDiff(startPoint, endPoint).then(
+            (elevationData) => {
+              setTransectData(
+                elevationData.filter(
+                  (d) => d.elevation1 > 0 && d.elevation2 > 0
+                )
+              );
+              setShowChart(true);
+            }
+          );
+        } else {
+          getTransectElevation(startPoint, endPoint).then((elevationData) => {
+            setTransectData(elevationData.filter((d) => d.elevation > 0));
+            setShowChart(true);
+          });
+        }
+      }
+    },
+    [compareChangeEnabled]
+  );
+
   useEffect(() => {
     if (map.current) {
       // If a map already exists, remove it before creating a new one
@@ -230,10 +380,6 @@ export default function Home(callback, deps) {
       map.current.addControl(draw.current, "top-right");
       setShowDrawHelper(true);
 
-      map.current.on("draw.create", handleDrawEvent);
-      map.current.on("draw.update", handleDrawEvent);
-      map.current.on("draw.delete", handleDeleteEvent);
-
       map.current.addSource("mapbox-dem", {
         type: "raster-dem",
         url: "mapbox://mapbox.mapbox-terrain-dem-v1",
@@ -273,46 +419,10 @@ export default function Home(callback, deps) {
       //   });
       // });
     });
+
     map.current.on("error", (e) => {
       console.error("Map error:", e.error);
     });
-    const getTransectElevation = async (
-      startPoint,
-      endPoint,
-      numSamples = 100
-    ) => {
-      // Create a line from start to end point
-      const line = lineString([startPoint, endPoint]);
-
-      const lineLength = length(line, { units: "kilometers" });
-
-      // Sample points along the line
-      const samplePoints = [];
-      for (let i = 0; i <= numSamples; i++) {
-        const point = turf.along(line, (lineLength / numSamples) * i, {
-          units: "kilometers",
-        });
-        samplePoints.push(point.geometry.coordinates);
-      }
-
-      // Fetch elevation for each point
-      const elevationData = await Promise.all(
-        samplePoints.map(async ([lng, lat]) => {
-          const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
-            tilesetUrl
-          )}`;
-          const response = await fetch(url);
-          const data = await response.json();
-          return {
-            lng,
-            lat,
-            elevation: data.values[0],
-          };
-        })
-      );
-
-      return elevationData;
-    };
 
     function handleDrawEvent(e) {
       const data = draw.current.getAll();
@@ -325,19 +435,93 @@ export default function Home(callback, deps) {
         const coordinates = line.geometry.coordinates;
         const startPoint = coordinates[0];
         const endPoint = coordinates[coordinates.length - 1];
+        console.log(compareChangeEnabled);
 
-        getTransectElevation(startPoint, endPoint).then((elevationData) => {
-          setTransectData(elevationData.filter((d) => d.elevation > 0));
-          setShowChart(true);
-        });
+        if (compareChangeEnabled) {
+          getTransectElevationDiff(startPoint, endPoint).then(
+            (elevationData) => {
+              setTransectData(
+                elevationData.filter(
+                  (d) => d.elevation1 > 0 && d.elevation2 > 0
+                )
+              );
+              setShowChart(true);
+            }
+          );
+        } else {
+          console.log(startPoint, endPoint);
+
+          getTransectElevation(startPoint, endPoint).then((elevationData) => {
+            console.log(elevationData.filter((d) => d.elevation > 0));
+
+            setTransectData(elevationData.filter((d) => d.elevation > 0));
+            setShowChart(true);
+          });
+        }
       }
     }
 
+    const debouncedGetElevation = debounce((lng, lat) => {
+      getElevation(lng, lat);
+    }, 100); // 200ms delay
+
     map.current.on("mousemove", (e) => {
       const { lng, lat } = e.lngLat;
-      getElevation(lng, lat);
+      debouncedGetElevation(lng, lat);
     });
   }, [selectedSite, layersForSelectedSite]);
+
+  // Effect for setting up initial draw event listener
+  useEffect(() => {
+    if (map.current && draw.current) {
+      const initialHandleDrawEvent = (e) => {
+        const data = draw.current.getAll();
+
+        const lines = data.features.filter(
+          (f) => f.geometry.type === "LineString"
+        );
+
+        if (lines.length > 0) {
+          const line = lines[0];
+          const coordinates = line.geometry.coordinates;
+          const startPoint = coordinates[0];
+          const endPoint = coordinates[coordinates.length - 1];
+
+          getTransectElevation(startPoint, endPoint, tilesetUrl).then(
+            (elevationData) => {
+              setTransectData(elevationData.filter((d) => d.elevation > 0));
+              setShowChart(true);
+            }
+          );
+        }
+      };
+
+      map.current.on("draw.create", initialHandleDrawEvent);
+      map.current.on("draw.update", initialHandleDrawEvent);
+      map.current.on("draw.delete", handleDeleteEvent);
+
+      return () => {
+        map.current.off("draw.create", initialHandleDrawEvent);
+        map.current.off("draw.update", initialHandleDrawEvent);
+        map.current.on("draw.delete", handleDeleteEvent);
+      };
+    }
+  }, [draw.current, selectedSite]);
+
+  // Effect for updating draw event listener when compareChangeEnabled changes
+  useEffect(() => {
+    if (map.current && draw.current) {
+      map.current.on("draw.create", handleDrawEvent);
+      map.current.on("draw.update", handleDrawEvent);
+      map.current.on("draw.delete", handleDeleteEvent);
+
+      return () => {
+        map.current.off("draw.create", handleDrawEvent);
+        map.current.off("draw.update", handleDrawEvent);
+        map.current.on("draw.delete", handleDeleteEvent);
+      };
+    }
+  }, [handleDrawEvent]);
 
   const updateLayer = (newLayer) => {
     map.current.removeLayer(selectedLayer);
@@ -353,7 +537,10 @@ export default function Home(callback, deps) {
 
     setSelectedLayer(newLayer);
   };
-
+  // console.log(compareChangeEnabled);
+  // useEffect(() => {
+  //   handleDeleteEvent();
+  // }, [compareChangeEnabled]);
   return (
     <main className="w-screen min-h-screen">
       <div className="absolute top-0 bottom-0 left-0 right-0">
@@ -413,6 +600,17 @@ export default function Home(callback, deps) {
             <p className="label-text">
               Draw a line to measure elevation change
             </p>
+            <div className="flex items-center mt-2">
+              <span className="label-text mr-2">
+                Compare change through time
+              </span>
+              <input
+                type="checkbox"
+                className="toggle toggle-primary"
+                checked={compareChangeEnabled}
+                onChange={() => setCompareChangeEnabled(!compareChangeEnabled)}
+              />
+            </div>
           </div>
         )}
         {typeof selectedLayer === "string" && selectedLayer.includes("DEM") && (
@@ -427,23 +625,66 @@ export default function Home(callback, deps) {
         <div style={{ position: "relative", width: "100%", height: "100vh" }}>
           <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
 
-          {transectData && (
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: "30%", // Adjust this value to control how much of the map the chart covers
-                backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
-                zIndex: 10, // Ensure the chart appears above the map
-                padding: "10px",
-                boxSizing: "border-box",
-              }}
-            >
-              <ElevationChart transectData={transectData} />
-            </div>
-          )}
+          {transectData &&
+            (compareChangeEnabled ? (
+              <>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "15%", // Position it above the second chart
+                    left: 0,
+                    right: 0,
+                    height: "15%",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    zIndex: 10,
+                    padding: "10px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  <ElevationChart
+                    transectData={transectData}
+                    varToPlot={"elevation1"}
+                  />
+                </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: "15%",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    zIndex: 10,
+                    padding: "10px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  <ElevationChart
+                    transectData={transectData}
+                    varToPlot={"elevationDiff"}
+                  />
+                </div>
+              </>
+            ) : (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "15%",
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  zIndex: 10,
+                  padding: "10px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <ElevationChart
+                  transectData={transectData}
+                  varToPlot={"elevation"}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </main>
