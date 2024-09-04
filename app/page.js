@@ -14,7 +14,7 @@ import ElevationChart from "./chart.js"; // Adjust the import path as needed
 import D3Legend from "./legend.js";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY2lyNTcwYzY5MDAwZWc3bm5ubTdzOWtzaiJ9.6QhxH6sQEgK634qO7a8MoQ";
+  "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY20wbXlremJuMDJ4dTJrb2d4d2Qzb3F3cCJ9.XO01zYbe_A7vMf7Dary7Og";
 
 const gistEarthColormap = [
   "#000000",
@@ -34,6 +34,20 @@ const gistEarthColormap = [
   "#FF8B3F",
   "#FF7427",
 ];
+
+const viridisColormap = [
+  "#440154", // Dark purple
+  "#482878",
+  "#3E4989",
+  "#31688E",
+  "#26828E",
+  "#1F9E89",
+  "#35B779",
+  "#6DCD59",
+  "#B4DE2C",
+  "#FDE725", // Yellow
+];
+
 // const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
 // const mosaicJsonUrl =
 //   "https://gist.githubusercontent.com/Mbrownshoes/92ccda216d53db9f20a8f2b4c3a60b58/raw/b8c238a7e53bea1d185b7704d6e5960ac459b925/mosaic.json";
@@ -66,6 +80,7 @@ const siteData = {
       "Ortho 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&bidx=2&bidx=3&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_ORTHO_WGS84_UTM10_Ellips_cog.tif`,
 
       "DEM 2": `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?colormap_name=gist_earth&rescale=-10,2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true&url=https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif`,
+      Slope: `https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&url=https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?bidx=1&rescale=0,90&colormap_name=viridis&url=https://public-aco-data.s3.amazonaws.com/data/4012_PlaceGlacier/24_4012_05/24_4012_05_PlaceGlacier_SLOPE_1m_WGS84_UTM10_Ellips_cog.tif`,
     },
     lngLat: [-122.62, 50.389],
     bounds: [
@@ -537,7 +552,7 @@ export default function Home(callback, deps) {
 
     setSelectedLayer(newLayer);
   };
-  // console.log(compareChangeEnabled);
+  console.log(selectedLayer);
   // useEffect(() => {
   //   handleDeleteEvent();
   // }, [compareChangeEnabled]);
