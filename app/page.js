@@ -14,7 +14,7 @@ import ElevationChart from "./chart.js"; // Adjust the import path as needed
 import D3Legend from "./legend.js";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY20wbXlremJuMDJ4dTJrb2d4d2Qzb3F3cCJ9.XO01zYbe_A7vMf7Dary7Og";
+  "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY20wbXh4emprMDc3cjJrcTI5czI3cXRjbCJ9.XNfWqelIzmfMTVRJlc7nIg";
 
 const gistEarthColormap = [
   "#000000",
