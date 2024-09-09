@@ -1,14 +1,9 @@
 // File: utils/elevation.js
-const tilesetUrl =
-  selectedSite === "Place Glacier" &&
-  (selectedLayer === "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
-    ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/22_4012_07_1m_GF_DEM_WGS84_z10_Ellips_FullExtent_COG.tif"
-    : selectedSite === "Place Glacier" &&
-      (!selectedLayer !== "DEM 1" || "Ortho 1" || "HS 1" || "Countour 1")
-    ? "https://public-aco-data.s3.amazonaws.com/4012_PlaceGlacier/23_4012_01_PlaceGlacier_DEM_1m_WGS84_UTM10_Ellips_cog.tif"
-    : "https://public-aco-data.s3.amazonaws.com/3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif";
+import { getTilesetUrl } from "./siteData";
 
 export const getElevation = async (lng, lat, tilesetUrl) => {
+  // const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
+
   const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
     tilesetUrl
   )}`;
@@ -50,6 +45,8 @@ export async function getTransectElevation(
   // Fetch elevation for each point
   const elevationData = await Promise.all(
     samplePoints.map(async ([lng, lat]) => {
+      // const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
+
       const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
         tilesetUrl
       )}`;

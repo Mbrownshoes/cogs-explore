@@ -1,12 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import SiteSelector from "../components/siteSelector";
 import LayerSelector from "../components/layerSelector";
 import ElevationDisplay from "../components/elevationDisplay";
 import DrawHelper from "../components/drawHelper";
 import DEMLegend from "../components/DEMLegend";
+import { getLayersForSite } from "../utils/siteUtils";
 
 const Map = dynamic(() => import("../components/map"), { ssr: false });
 
@@ -19,6 +20,14 @@ export default function Home() {
   const [compareChangeEnabled, setCompareChangeEnabled] = useState(false);
   const [transectData, setTransectData] = useState(null);
   const [mapInstance, setMapInstance] = useState(null);
+
+  useEffect(() => {
+    console.log(selectedSite);
+
+    const layers = getLayersForSite(selectedSite);
+    setLayersForSelectedSite(layers);
+    setSelectedLayer(Object.keys(layers)[0]); //set initial layer
+  }, [selectedSite]);
 
   // Additional state variables
   const [mapCenter, setMapCenter] = useState({
