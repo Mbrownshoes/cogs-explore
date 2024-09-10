@@ -60,8 +60,6 @@ export default function Home() {
     // or triggering other functions based on the new transect data
   }, []);
 
-  console.log(compareChangeEnabled);
-
   return (
     <main className="w-screen min-h-screen">
       <div className="absolute top-0 bottom-0 left-0 right-0">
