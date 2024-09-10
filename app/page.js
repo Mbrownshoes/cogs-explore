@@ -36,6 +36,8 @@ export default function Home() {
     console.log(selectedSite);
 
     const layers = getLayersForSite(selectedSite);
+    console.log(layers);
+
     setLayersForSelectedSite(layers);
     setSelectedLayer(Object.keys(layers)[0]); //set initial layer
   }, [selectedSite]);

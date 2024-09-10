@@ -77,7 +77,6 @@ export async function getTransectElevationDiff(
     const line = lineString([startPoint, endPoint]);
 
     const lineLength = length(line, { units: "kilometers" });
-    console.log("Line length:", lineLength);
 
     // Sample points along the line
     const samplePoints = [];
@@ -87,7 +86,6 @@ export async function getTransectElevationDiff(
       });
       samplePoints.push(point.geometry.coordinates);
     }
-    console.log("Sample points:", samplePoints);
 
     // Define both URLs (assuming tilesetUrl is an object with url1 and url2 properties)
     const url1 =
@@ -125,8 +123,6 @@ export async function getTransectElevationDiff(
         };
       })
     );
-
-    console.log("Final elevation data:", elevationData);
 
     return elevationData; // This is the important line that returns the processed data
   } catch (error) {

@@ -68,6 +68,8 @@ export const getTilesetUrl = (selectedSite, selectedLayer) => {
     },
     "Elliot Creek":
       "3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif",
+    "Mt. Robson":
+      "4028_MtRobsonPark/23_4028_01_MtRobsonPark_ORTHO_WGS84_UTM11_Ellips_viz.tif ",
   };
 
   const config = siteConfigs[selectedSite];
@@ -153,11 +155,26 @@ export const siteData = {
       50.46361196092505,
     ],
   },
+  MtRobsonPark: {
+    name: "Mt. Robson",
+    layers: {
+      "Ortho 1": createLayerConfig(
+        "ortho",
+        "4028_MtRobsonPark/23_4028_01_MtRobsonPark_ORTHO_WGS84_UTM11_Ellips_viz.tif"
+      ),
+    },
+    lngLat: [-118.900354, 52.901194],
+    bounds: [
+      -119.47493156819053, 52.990501872376456, -118.88422215251633,
+      53.26082193493945,
+    ],
+  },
 };
 
 export const siteAliases = {
   "Place Glacier": "PlaceGlacier",
   "Elliot Creek": "ElliotCreekLandslide",
+  "Mt. Robson": "MtRobsonPark",
 };
 
 export function layersForSite(siteName) {

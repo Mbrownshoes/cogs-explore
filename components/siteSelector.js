@@ -1,5 +1,5 @@
 export default function SiteSelector({ selectedSite, onSiteSelect }) {
-  const sites = ["Place Glacier", "Elliot Creek"];
+  const sites = ["Place Glacier", "Elliot Creek", "Mt. Robson"];
 
   return (
     <div className="bg-base-200 p-2 rounded-box">

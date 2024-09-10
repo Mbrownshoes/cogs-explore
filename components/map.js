@@ -194,6 +194,7 @@ export default function Map({
       }
     };
   }, [mapLoaded, onElevationChange, selectedSite, selectedLayer]);
+
   // Effect to handle layer changes
   useEffect(() => {
     if (!mapLoaded) return;
