@@ -60,54 +60,7 @@ export default function Home() {
     // or triggering other functions based on the new transect data
   }, []);
 
-  const handleDrawEvent = useCallback(
-    (e, eventType) => {
-      const lines = e.features.filter((f) => f.geometry.type === "LineString");
-      if (lines.length > 0) {
-        const line = lines[0];
-        const [startPoint, endPoint] = [
-          line.geometry.coordinates[0],
-          line.geometry.coordinates[line.geometry.coordinates.length - 1],
-        ];
-
-        const fetchElevationData = compareChangeEnabled
-          ? getTransectElevationDiff
-          : getTransectElevation;
-
-        fetchElevationData(startPoint, endPoint).then((elevationData) => {
-          handleTransectDataChange(
-            elevationData.filter((d) => d.elevation > 0)
-          );
-        });
-      }
-    },
-    [compareChangeEnabled, handleTransectDataChange]
-  );
-
-  const handleMapLoad = useCallback(
-    (map) => {
-      setMapInstance(map);
-
-      // Example: Set up event listeners
-      map.on("click", "custom-layer", (e) => {
-        console.log("Custom layer clicked!", e.features[0].properties);
-      });
-
-      // Only fly to the initial center on the first load
-      if (!initialLoadDone.current) {
-        console.log("Flying to initial center and zoom");
-        map.flyTo({
-          center: [mapCenter.lng, mapCenter.lat],
-          zoom: mapZoom,
-          essential: true,
-        });
-        initialLoadDone.current = true;
-      }
-    },
-    [mapCenter, mapZoom]
-  );
-
-  console.log(showDrawHelper);
+  console.log(compareChangeEnabled);
 
   return (
     <main className="w-screen min-h-screen">
@@ -131,38 +84,80 @@ export default function Home() {
           />
         )}
         {selectedLayer.includes("DEM") && <DEMLegend />}
-        <Map
-          mapCenter={mapCenter}
-          selectedSite={selectedSite}
-          selectedLayer={selectedLayer}
-          onElevationChange={setElevation}
-          onShowDrawHelper={setShowDrawHelper}
-          compareChangeEnabled={compareChangeEnabled}
-          onTransectDataChange={handleTransectDataChange}
-          onMapMove={handleMapMove}
-          onDrawEvent={handleDrawEvent}
-          onMapLoad={handleMapLoad}
-        />
-        {transectData && (
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: "15%",
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              zIndex: 10,
-              padding: "10px",
-              boxSizing: "border-box",
-            }}
-          >
-            <ElevationChart
-              transectData={transectData}
-              varToPlot={"elevation"}
-            />
-          </div>
-        )}
+        <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+          <Map
+            mapCenter={mapCenter}
+            selectedSite={selectedSite}
+            selectedLayer={selectedLayer}
+            onElevationChange={setElevation}
+            onShowDrawHelper={setShowDrawHelper}
+            compareChangeEnabled={compareChangeEnabled}
+            onTransectDataChange={handleTransectDataChange}
+            // onMapMove={handleMapMove}
+            // onDrawEvent={handleDrawEvent}
+            // onMapLoad={handleMapLoad}
+          />
+          {transectData &&
+            (compareChangeEnabled ? (
+              <>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "15%", // Position it above the second chart
+                    left: 0,
+                    right: 0,
+                    height: "15%",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    zIndex: 10,
+                    padding: "10px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  <ElevationChart
+                    transectData={transectData}
+                    varToPlot={"elevation1"}
+                  />
+                </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: "15%",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    zIndex: 10,
+                    padding: "10px",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  <ElevationChart
+                    transectData={transectData}
+                    varToPlot={"elevationDiff"}
+                  />
+                </div>
+              </>
+            ) : (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "15%",
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  zIndex: 10,
+                  padding: "10px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <ElevationChart
+                  transectData={transectData}
+                  varToPlot={"elevation"}
+                />
+              </div>
+            ))}
+        </div>
       </div>
     </main>
   );

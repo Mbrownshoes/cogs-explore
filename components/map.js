@@ -46,6 +46,7 @@ export default function Map({
           line.geometry.coordinates[line.geometry.coordinates.length - 1],
         ];
         const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
+        console.log(compareChangeEnabled);
 
         const fetchElevationData = compareChangeEnabled
           ? (start, end) => getTransectElevationDiff(start, end, tilesetUrl)
@@ -156,12 +157,15 @@ export default function Map({
         tileSize: 512,
       });
 
-      map.current.addLayer({
-        id: layerName,
-        type: "raster",
-        source: layerName,
-        paint: {},
-      });
+      map.current.addLayer(
+        {
+          id: layerName,
+          type: "raster",
+          source: layerName,
+          paint: {},
+        },
+        "gl-draw-polygon-fill-inactive.cold"
+      ); // Add layers below the draw layers
 
       // Set visibility based on selectedLayer
       map.current.setLayoutProperty(
@@ -197,8 +201,8 @@ export default function Map({
   }, [mapLoaded, handleDrawEvent, handleDeleteEvent]);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh" }}>
-      <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
-    </div>
+    // <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+    <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
+    // </div>
   );
 }
