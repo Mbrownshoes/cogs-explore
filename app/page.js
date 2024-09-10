@@ -143,15 +143,17 @@ export default function Home() {
   return (
     <main className="w-screen min-h-screen">
       <div className="absolute top-0 bottom-0 left-0 right-0">
-        <SiteSelector
-          selectedSite={selectedSite}
-          onSiteSelect={setSelectedSite}
-        />
-        <LayerSelector
-          layers={layersForSelectedSite}
-          selectedLayer={selectedLayer}
-          onLayerSelect={setSelectedLayer}
-        />
+        <div className="absolute top-0 left-0 z-10 m-4 flex flex-col gap-4">
+          <SiteSelector
+            selectedSite={selectedSite}
+            onSiteSelect={setSelectedSite}
+          />
+          <LayerSelector
+            layers={layersForSelectedSite}
+            selectedLayer={selectedLayer}
+            onLayerSelect={setSelectedLayer}
+          />
+        </div>
         <ElevationDisplay elevation={elevation} />
         {showDrawHelper && (
           <DrawHelper

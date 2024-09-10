@@ -4,7 +4,7 @@ export default function LayerSelector({
   onLayerSelect,
 }) {
   return (
-    <div className="flex flex-col bg-base-200 w-40 p-2 rounded-box">
+    <div className="bg-base-200 p-2 rounded-box">
       <h3 className="label-text text-lg font-bold">Layers</h3>
       {Object.keys(layers).map((layer) => (
         <div key={layer} className="form-control">
