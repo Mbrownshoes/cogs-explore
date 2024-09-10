@@ -10,6 +10,7 @@ import {
 import { layersForSite, getTilesetUrl } from "../utils/siteData";
 import { debounce } from "../utils/functions";
 import { getBoundsForSite } from "../utils/siteUtils";
+import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiaGFrYWkiLCJhIjoiY20wbXh4emprMDc3cjJrcTI5czI3cXRjbCJ9.XNfWqelIzmfMTVRJlc7nIg";
@@ -84,15 +85,6 @@ export default function Map({
       setMapLoaded(true);
       if (onMapLoad) onMapLoad(map.current);
 
-      map.current.addSource("mapbox-dem", {
-        type: "raster-dem",
-        url: "mapbox://mapbox.mapbox-terrain-dem-v1",
-        tileSize: 512,
-        maxzoom: 14,
-      });
-
-      map.current.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
-
       draw.current = new MapboxDraw({
         displayControlsDefault: false,
         controls: {
@@ -103,6 +95,15 @@ export default function Map({
       map.current.addControl(draw.current, "top-right");
 
       onShowDrawHelper(true);
+
+      map.current.addSource("mapbox-dem", {
+        type: "raster-dem",
+        url: "mapbox://mapbox.mapbox-terrain-dem-v1",
+        tileSize: 512,
+        maxzoom: 14,
+      });
+
+      map.current.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
 
       const initialLayers = layersForSite(selectedSite);
       Object.entries(initialLayers).forEach(([layerName, sourceUrl]) => {

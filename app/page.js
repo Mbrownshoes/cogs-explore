@@ -16,7 +16,7 @@ export default function Home() {
   const [selectedLayer, setSelectedLayer] = useState("");
   const [layersForSelectedSite, setLayersForSelectedSite] = useState({});
   const [elevation, setElevation] = useState(null);
-  const [showDrawHelper, setShowDrawHelper] = useState(false);
+  const [showDrawHelper, setShowDrawHelper] = useState(true);
   const [compareChangeEnabled, setCompareChangeEnabled] = useState(false);
   const [transectData, setTransectData] = useState(null);
   const [mapInstance, setMapInstance] = useState(null);
@@ -53,21 +53,23 @@ export default function Home() {
     // Additional error handling logic
   }, []);
 
-  const fetchSiteData = useCallback(
-    async (siteName) => {
-      setIsLoading(true);
-      try {
-        // Fetch data for the selected site
-        const data = await fetchDataForSite(siteName);
-        setLayersForSelectedSite(data.layers);
-        setIsLoading(false);
-      } catch (error) {
-        handleError("Failed to fetch site data");
-        setIsLoading(false);
-      }
-    },
-    [handleError]
-  );
+  // const fetchSiteData = useCallback(
+  //   async (siteName) => {
+  //     setIsLoading(true);
+  //     try {
+  //       // Fetch data for the selected site
+  //       const data = await fetchDataForSite(siteName);
+  //       console.log(data);
+
+  //       setLayersForSelectedSite(data.layers);
+  //       setIsLoading(false);
+  //     } catch (error) {
+  //       handleError("Failed to fetch site data");
+  //       setIsLoading(false);
+  //     }
+  //   },
+  //   [handleError]
+  // );
 
   const handleTransectDataChange = useCallback((newTransectData) => {
     setTransectData(newTransectData);
@@ -139,6 +141,7 @@ export default function Home() {
     },
     [mapCenter, mapZoom]
   );
+  console.log(showDrawHelper);
 
   return (
     <main className="w-screen min-h-screen">
