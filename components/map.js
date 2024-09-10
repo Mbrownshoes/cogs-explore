@@ -33,7 +33,37 @@ export default function Map({
 
   const handleDrawEvent = useCallback(
     (e) => {
-      // ... (handleDrawEvent implementation remains the same)
+      setShowChart(false);
+      const data = draw.current.getAll();
+      const lines = data.features.filter(
+        (f) => f.geometry.type === "LineString"
+      );
+
+      if (lines.length > 0) {
+        const line = lines[0];
+        const [startPoint, endPoint] = [
+          line.geometry.coordinates[0],
+          line.geometry.coordinates[line.geometry.coordinates.length - 1],
+        ];
+        const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
+
+        const fetchElevationData = compareChangeEnabled
+          ? (start, end) => getTransectElevationDiff(start, end, tilesetUrl)
+          : (start, end) => getTransectElevation(start, end, tilesetUrl);
+
+        fetchElevationData(startPoint, endPoint).then((elevationData) => {
+          console.log(elevationData);
+
+          onTransectDataChange(
+            elevationData.filter((d) =>
+              compareChangeEnabled
+                ? d.elevation1 > 0 && d.elevation2 > 0
+                : d.elevation > 0
+            )
+          );
+          setShowChart(true);
+        });
+      }
     },
     [compareChangeEnabled, onTransectDataChange, selectedSite, selectedLayer]
   );
@@ -58,7 +88,6 @@ export default function Map({
 
     map.current.on("load", () => {
       setMapLoaded(true);
-      console.log(onMapLoad);
 
       if (onMapLoad) onMapLoad(map.current);
 

@@ -3,6 +3,7 @@ import * as Plot from "@observablehq/plot";
 
 function ElevationChart({ transectData, varToPlot }) {
   const chartRef = useRef();
+  console.log(transectData, varToPlot);
 
   useEffect(() => {
     if (

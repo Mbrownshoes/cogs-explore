@@ -1,5 +1,8 @@
 // File: utils/elevation.js
 import { getTilesetUrl } from "./siteData";
+import { lineString, along } from "@turf/turf";
+import * as turf from "@turf/turf";
+import length from "@turf/length";
 
 export const getElevation = async (lng, lat, tilesetUrl) => {
   // const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
@@ -50,6 +53,7 @@ export async function getTransectElevation(
       const url = `https://goose.hakai.org/titiler/cog/point/${lng},${lat}?url=${encodeURIComponent(
         tilesetUrl
       )}`;
+
       const response = await fetch(url);
       const data = await response.json();
       return {

@@ -8,6 +8,7 @@ import ElevationDisplay from "../components/elevationDisplay";
 import DrawHelper from "../components/drawHelper";
 import DEMLegend from "../components/DEMLegend";
 import { getLayersForSite } from "../utils/siteUtils";
+import ElevationChart from "./chart.js"; // Adjust the import path as needed
 
 const Map = dynamic(() => import("../components/map"), { ssr: false });
 
@@ -142,6 +143,26 @@ export default function Home() {
           onDrawEvent={handleDrawEvent}
           onMapLoad={handleMapLoad}
         />
+        {transectData && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "15%",
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              zIndex: 10,
+              padding: "10px",
+              boxSizing: "border-box",
+            }}
+          >
+            <ElevationChart
+              transectData={transectData}
+              varToPlot={"elevation"}
+            />
+          </div>
+        )}
       </div>
     </main>
   );
