@@ -46,15 +46,12 @@ export default function Map({
           line.geometry.coordinates[line.geometry.coordinates.length - 1],
         ];
         const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
-        console.log(compareChangeEnabled);
 
         const fetchElevationData = compareChangeEnabled
           ? (start, end) => getTransectElevationDiff(start, end, tilesetUrl)
           : (start, end) => getTransectElevation(start, end, tilesetUrl);
 
         fetchElevationData(startPoint, endPoint).then((elevationData) => {
-          console.log(elevationData);
-
           onTransectDataChange(
             elevationData.filter((d) =>
               compareChangeEnabled
@@ -77,7 +74,6 @@ export default function Map({
   // Effect to initialize the map
   useEffect(() => {
     if (map.current) return; // Only create the map once
-    console.log(mapCenter);
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -165,7 +161,7 @@ export default function Map({
           paint: {},
         },
         "gl-draw-polygon-fill-inactive.cold"
-      ); // Add layers below the draw layers
+      );
 
       // Set visibility based on selectedLayer
       map.current.setLayoutProperty(
@@ -178,6 +174,26 @@ export default function Map({
     console.log("Layers updated successfully");
   }, [selectedSite, selectedLayer]);
 
+  useEffect(() => {
+    if (!mapLoaded || !map.current) return;
+    const tilesetUrl = getTilesetUrl(selectedSite, selectedLayer);
+
+    const handleMouseMove = debounce(async (e) => {
+      const { lng, lat } = e.lngLat;
+      const elevation = await getElevation(lng, lat, tilesetUrl);
+      if (elevation !== null) {
+        onElevationChange(elevation);
+      }
+    }, 100);
+
+    map.current.on("mousemove", handleMouseMove);
+
+    return () => {
+      if (map.current) {
+        map.current.off("mousemove", handleMouseMove);
+      }
+    };
+  }, [mapLoaded, onElevationChange, selectedSite, selectedLayer]);
   // Effect to handle layer changes
   useEffect(() => {
     if (!mapLoaded) return;
@@ -200,9 +216,5 @@ export default function Map({
     };
   }, [mapLoaded, handleDrawEvent, handleDeleteEvent]);
 
-  return (
-    // <div style={{ position: "relative", width: "100%", height: "100vh" }}>
-    <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />
-    // </div>
-  );
+  return <div ref={mapContainer} style={{ width: "100%", height: "100%" }} />;
 }
