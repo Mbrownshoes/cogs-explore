@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import SiteSelector from "../components/siteSelector";
 import LayerSelector from "../components/layerSelector";
 import ElevationDisplay from "../components/elevationDisplay";
@@ -21,15 +21,6 @@ export default function Home() {
   const [transectData, setTransectData] = useState(null);
   const [mapInstance, setMapInstance] = useState(null);
 
-  useEffect(() => {
-    console.log(selectedSite);
-
-    const layers = getLayersForSite(selectedSite);
-    setLayersForSelectedSite(layers);
-    setSelectedLayer(Object.keys(layers)[0]); //set initial layer
-  }, [selectedSite]);
-
-  // Additional state variables
   const [mapCenter, setMapCenter] = useState({
     lng: -122.595414,
     lat: 50.381554,
@@ -38,7 +29,16 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Additional functions
+  const initialLoadDone = useRef(false);
+
+  useEffect(() => {
+    console.log(selectedSite);
+
+    const layers = getLayersForSite(selectedSite);
+    setLayersForSelectedSite(layers);
+    setSelectedLayer(Object.keys(layers)[0]); //set initial layer
+  }, [selectedSite]);
+
   const handleMapMove = useCallback((newCenter, newZoom) => {
     setMapCenter(newCenter);
     setMapZoom(newZoom);
@@ -52,24 +52,6 @@ export default function Home() {
     setError(errorMessage);
     // Additional error handling logic
   }, []);
-
-  // const fetchSiteData = useCallback(
-  //   async (siteName) => {
-  //     setIsLoading(true);
-  //     try {
-  //       // Fetch data for the selected site
-  //       const data = await fetchDataForSite(siteName);
-  //       console.log(data);
-
-  //       setLayersForSelectedSite(data.layers);
-  //       setIsLoading(false);
-  //     } catch (error) {
-  //       handleError("Failed to fetch site data");
-  //       setIsLoading(false);
-  //     }
-  //   },
-  //   [handleError]
-  // );
 
   const handleTransectDataChange = useCallback((newTransectData) => {
     setTransectData(newTransectData);
@@ -105,42 +87,25 @@ export default function Home() {
     (map) => {
       setMapInstance(map);
 
-      // Example: Add a custom layer immediately after map load
-      map.addSource("custom-source", {
-        type: "geojson",
-        data: {
-          type: "Feature",
-          geometry: {
-            type: "Point",
-            coordinates: [mapCenter.lng, mapCenter.lat],
-          },
-        },
-      });
-
-      map.addLayer({
-        id: "custom-layer",
-        type: "circle",
-        source: "custom-source",
-        paint: {
-          "circle-radius": 10,
-          "circle-color": "#ff0000",
-        },
-      });
-
       // Example: Set up event listeners
       map.on("click", "custom-layer", (e) => {
         console.log("Custom layer clicked!", e.features[0].properties);
       });
 
-      // Example: Fly to the initial center
-      map.flyTo({
-        center: [mapCenter.lng, mapCenter.lat],
-        zoom: mapZoom,
-        essential: true,
-      });
+      // Only fly to the initial center on the first load
+      if (!initialLoadDone.current) {
+        console.log("Flying to initial center and zoom");
+        map.flyTo({
+          center: [mapCenter.lng, mapCenter.lat],
+          zoom: mapZoom,
+          essential: true,
+        });
+        initialLoadDone.current = true;
+      }
     },
     [mapCenter, mapZoom]
   );
+
   console.log(showDrawHelper);
 
   return (
@@ -166,6 +131,7 @@ export default function Home() {
         )}
         {selectedLayer.includes("DEM") && <DEMLegend />}
         <Map
+          mapCenter={mapCenter}
           selectedSite={selectedSite}
           selectedLayer={selectedLayer}
           onElevationChange={setElevation}
