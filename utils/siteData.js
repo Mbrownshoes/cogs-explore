@@ -68,8 +68,8 @@ export const getTilesetUrl = (selectedSite, selectedLayer) => {
     },
     "Elliot Creek":
       "3030_ElliotCreekLandslide/21_3030_01_ElliotCreekLandslide_DEM_1m_CSRS_UTM10_HTv2_cog.tif",
-    "Mt. Robson":
-      "4028_MtRobsonPark/23_4028_01_MtRobsonPark_ORTHO_WGS84_UTM11_Ellips_viz.tif ",
+    // "Mt. Robson":
+    //   "4028_MtRobsonPark/23_4028_01_MtRobsonPark_ORTHO_WGS84_UTM11_Ellips_viz.tif ",
   };
 
   const config = siteConfigs[selectedSite];

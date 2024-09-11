@@ -32,6 +32,7 @@ export async function getTransectElevation(
 ) {
   // Create a line from start to end point
   const line = lineString([startPoint, endPoint]);
+  console.log(tilesetUrl);
 
   const lineLength = length(line, { units: "kilometers" });
 
@@ -73,6 +74,8 @@ export async function getTransectElevationDiff(
   numSamples = 100
 ) {
   try {
+    console.log(tilesetUrl);
+
     // Create a line from start to end point
     const line = lineString([startPoint, endPoint]);
 
