@@ -18,7 +18,6 @@ mapboxgl.accessToken =
 export default function Map({
   mapCenter,
   selectedSite,
-  onMapLoad,
   selectedLayer,
   onElevationChange,
   onShowDrawHelper,
@@ -74,6 +73,7 @@ export default function Map({
   // Effect to initialize the map
   useEffect(() => {
     if (map.current) return; // Only create the map once
+    console.log("Map initialized");
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -84,9 +84,8 @@ export default function Map({
     });
 
     map.current.on("load", () => {
+      console.log("Map loaded");
       setMapLoaded(true);
-
-      if (onMapLoad) onMapLoad(map.current);
 
       draw.current = new MapboxDraw({
         displayControlsDefault: false,
@@ -108,13 +107,7 @@ export default function Map({
 
       map.current.setTerrain({ source: "mapbox-dem", exaggeration: 1 });
 
-      // Set initial bounds
-      const bounds = getBoundsForSite(selectedSite);
-      map.current.fitBounds(bounds, {
-        padding: 20,
-        duration: 1000,
-        pitch: 60,
-      });
+      // Initial bounds setting moved to separate effect
     });
 
     return () => {
@@ -123,7 +116,20 @@ export default function Map({
         map.current = null;
       }
     };
-  }, [mapCenter, selectedSite, onMapLoad, onShowDrawHelper]);
+  }, [mapCenter, onShowDrawHelper]);
+
+  // New effect to handle selectedSite changes
+  useEffect(() => {
+    if (!mapLoaded || !map.current) return;
+
+    const bounds = getBoundsForSite(selectedSite);
+    map.current.flyTo({
+      center: [(bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2],
+      zoom: 12,
+      pitch: 60,
+      duration: 2000, // Duration of animation in milliseconds
+    });
+  }, [selectedSite, mapLoaded]);
 
   // Function to update layers
   const updateLayers = useCallback(() => {
