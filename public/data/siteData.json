@@ -2,155 +2,229 @@
   "4012_PlaceGlacier": {
     "id": 1,
     "name": "4012_PlaceGlacier",
-    "layers": {
-      "Aoi 21_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_01%2F21_4012_01_AOI%2F21_4012_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_01%2F21_4012_01_DEM%2F21_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_01%2F21_4012_01_ORTHO%2F21_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_01%2F21_4012_01_LASER%2F21_4012_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_02%2F21_4012_02_AOI%2F21_4012_02_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_02%2F21_4012_02_DEM%2F21_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_02%2F21_4012_02_ORTHO%2F21_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_02%2F21_4012_02_LASER%2F21_4012_02_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_03%2F21_4012_03_AOI%2F21_4012_03_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_03%2F21_4012_03_DEM%2F21_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_03%2F21_4012_03_ORTHO%2F21_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_03%2F21_4012_03_LASER%2F21_4012_03_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_04%2F21_4012_04_AOI%2F21_4012_04_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_04%2F21_4012_04_DEM%2F21_4012_04_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_04%2F21_4012_04_ORTHO%2F21_4012_04_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_04%2F21_4012_04_LASER%2F21_4012_04_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_05%2F21_4012_05_AOI%2F21_4012_05_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_05%2F21_4012_05_DEM%2F21_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_05%2F21_4012_05_ORTHO%2F21_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_05%2F21_4012_05_LASER%2F21_4012_05_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_06%2F21_4012_06_AOI%2F21_4012_06_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_06%2F21_4012_06_DEM%2F21_4012_06_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_06%2F21_4012_06_ORTHO%2F21_4012_06_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_06%2F21_4012_06_LASER%2F21_4012_06_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_07%2F21_4012_07_AOI%2F21_4012_07_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_07%2F21_4012_07_DEM%2F21_4012_07_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_07%2F21_4012_07_ORTHO%2F21_4012_07_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_07%2F21_4012_07_LASER%2F21_4012_07_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_08%2F21_4012_08_AOI%2F21_4012_08_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_08%2F21_4012_08_DEM%2F21_4012_08_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_08%2F21_4012_08_ORTHO%2F21_4012_08_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_08%2F21_4012_08_LASER%2F21_4012_08_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_09%2F21_4012_09_AOI%2F21_4012_09_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_09%2F21_4012_09_DEM%2F21_4012_09_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_09%2F21_4012_09_ORTHO%2F21_4012_09_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_09%2F21_4012_09_LASER%2F21_4012_09_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_10%2F21_4012_10_AOI%2F21_4012_10_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_10%2F21_4012_10_DEM%2F21_4012_10_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_10%2F21_4012_10_ORTHO%2F21_4012_10_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_10%2F21_4012_10_LASER%2F21_4012_10_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_01%2F22_4012_01_AOI%2F22_4012_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_01%2F22_4012_01_DEM%2F22_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_01%2F22_4012_01_ORTHO%2F22_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_01%2F22_4012_01_LASER%2F22_4012_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_02%2F22_4012_02_AOI%2F22_4012_02_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_02%2F22_4012_02_DEM%2F22_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_02%2F22_4012_02_ORTHO%2F22_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_02%2F22_4012_02_LASER%2F22_4012_02_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_03%2F22_4012_03_AOI%2F22_4012_03_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_03%2F22_4012_03_DEM%2F22_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_03%2F22_4012_03_ORTHO%2F22_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_03%2F22_4012_03_LASER%2F22_4012_03_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_05%2F22_4012_05_AOI%2F22_4012_05_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_05%2F22_4012_05_DEM%2F22_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_05%2F22_4012_05_ORTHO%2F22_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_05%2F22_4012_05_LASER%2F22_4012_05_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_06%2F22_4012_06_AOI%2F22_4012_06_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_06%2F22_4012_06_DEM%2F22_4012_06_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_06%2F22_4012_06_ORTHO%2F22_4012_06_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_06%2F22_4012_06_LASER%2F22_4012_06_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_07%2F22_4012_07_AOI%2F22_4012_07_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_07%2F22_4012_07_DEM%2F22_4012_07_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_07%2F22_4012_07_ORTHO%2F22_4012_07_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_07%2F22_4012_07_LASER%2F22_4012_07_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_08%2F22_4012_08_AOI%2F22_4012_08_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_08%2F22_4012_08_DEM%2F22_4012_08_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_08%2F22_4012_08_ORTHO%2F22_4012_08_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_08%2F22_4012_08_LASER%2F22_4012_08_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_09%2F22_4012_09_AOI%2F22_4012_09_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_09%2F22_4012_09_DEM%2F22_4012_09_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_09%2F22_4012_09_ORTHO%2F22_4012_09_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_09%2F22_4012_09_LASER%2F22_4012_09_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_10%2F22_4012_10_AOI%2F22_4012_10_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_10%2F22_4012_10_DEM%2F22_4012_10_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_10%2F22_4012_10_ORTHO%2F22_4012_10_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_10%2F22_4012_10_LASER%2F22_4012_10_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_11%2F22_4012_11_AOI%2F22_4012_11_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_11%2F22_4012_11_DEM%2F22_4012_11_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_11%2F22_4012_11_ORTHO%2F22_4012_11_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_11%2F22_4012_11_LASER%2F22_4012_11_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4012_12": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_12%2F22_4012_12_AOI%2F22_4012_12_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4012_12": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_12%2F22_4012_12_DEM%2F22_4012_12_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4012_12": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_12%2F22_4012_12_ORTHO%2F22_4012_12_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4012_12": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_12%2F22_4012_12_LASER%2F22_4012_12_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_01%2F23_4012_01_AOI%2F23_4012_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_01%2F23_4012_01_DEM%2F23_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_01%2F23_4012_01_ORTHO%2F23_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_01%2F23_4012_01_LASER%2F23_4012_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_02%2F23_4012_02_AOI%2F23_4012_02_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_02%2F23_4012_02_DEM%2F23_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_02%2F23_4012_02_ORTHO%2F23_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_02%2F23_4012_02_LASER%2F23_4012_02_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_03%2F23_4012_03_AOI%2F23_4012_03_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_03%2F23_4012_03_DEM%2F23_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_03%2F23_4012_03_ORTHO%2F23_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_03%2F23_4012_03_LASER%2F23_4012_03_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_04%2F23_4012_04_AOI%2F23_4012_04_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_04%2F23_4012_04_DEM%2F23_4012_04_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_04%2F23_4012_04_ORTHO%2F23_4012_04_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_04%2F23_4012_04_LASER%2F23_4012_04_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_05%2F23_4012_05_AOI%2F23_4012_05_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_05%2F23_4012_05_DEM%2F23_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_05%2F23_4012_05_ORTHO%2F23_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_05%2F23_4012_05_LASER%2F23_4012_05_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_06%2F23_4012_06_AOI%2F23_4012_06_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_06%2F23_4012_06_DEM%2F23_4012_06_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_06%2F23_4012_06_ORTHO%2F23_4012_06_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_06%2F23_4012_06_LASER%2F23_4012_06_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_07%2F23_4012_07_AOI%2F23_4012_07_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_07%2F23_4012_07_DEM%2F23_4012_07_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_07%2F23_4012_07_ORTHO%2F23_4012_07_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_07%2F23_4012_07_LASER%2F23_4012_07_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_08%2F23_4012_08_AOI%2F23_4012_08_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_08%2F23_4012_08_DEM%2F23_4012_08_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_08%2F23_4012_08_ORTHO%2F23_4012_08_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_08%2F23_4012_08_LASER%2F23_4012_08_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_09%2F23_4012_09_AOI%2F23_4012_09_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_09%2F23_4012_09_DEM%2F23_4012_09_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_09%2F23_4012_09_ORTHO%2F23_4012_09_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_09%2F23_4012_09_LASER%2F23_4012_09_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_10%2F23_4012_10_AOI%2F23_4012_10_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_10%2F23_4012_10_DEM%2F23_4012_10_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_10%2F23_4012_10_ORTHO%2F23_4012_10_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_10%2F23_4012_10_LASER%2F23_4012_10_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_11%2F23_4012_11_AOI%2F23_4012_11_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_11%2F23_4012_11_DEM%2F23_4012_11_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_11%2F23_4012_11_ORTHO%2F23_4012_11_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_11%2F23_4012_11_LASER%2F23_4012_11_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 24_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_01%2F24_4012_01_AOI%2F24_4012_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 24_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_01%2F24_4012_01_DEM%2F24_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 24_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_01%2F24_4012_01_ORTHO%2F24_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 24_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_01%2F24_4012_01_LASER%2F24_4012_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 24_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_02%2F24_4012_02_AOI%2F24_4012_02_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 24_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_02%2F24_4012_02_DEM%2F24_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 24_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_02%2F24_4012_02_ORTHO%2F24_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 24_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_02%2F24_4012_02_LASER%2F24_4012_02_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 24_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_03%2F24_4012_03_AOI%2F24_4012_03_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 24_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_03%2F24_4012_03_DEM%2F24_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 24_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_03%2F24_4012_03_ORTHO%2F24_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 24_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_03%2F24_4012_03_LASER%2F24_4012_03_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 24_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_04%2F24_4012_04_AOI%2F24_4012_04_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 24_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_04%2F24_4012_04_DEM%2F24_4012_04_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 24_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_04%2F24_4012_04_ORTHO%2F24_4012_04_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 24_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_04%2F24_4012_04_LASER%2F24_4012_04_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 24_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_05%2F24_4012_05_AOI%2F24_4012_05_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 24_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_05%2F24_4012_05_DEM%2F24_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 24_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_05%2F24_4012_05_ORTHO%2F24_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 24_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_05%2F24_4012_05_LASER%2F24_4012_05_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true"
+    "dates": {
+      "2021-03-16T20:50:00Z": {
+        "layers": {
+          "Dem 21_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_01%2F21_4012_01_DEM%2F21_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_01%2F21_4012_01_ORTHO%2F21_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-04-11T19:41:00Z": {
+        "layers": {
+          "Dem 21_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_02%2F21_4012_02_DEM%2F21_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_02%2F21_4012_02_ORTHO%2F21_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-04-16T19:41:00Z": {
+        "layers": {
+          "Dem 21_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_03%2F21_4012_03_DEM%2F21_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_03%2F21_4012_03_ORTHO%2F21_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-05-15T20:40:00Z": {
+        "layers": {
+          "Dem 21_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_04%2F21_4012_04_DEM%2F21_4012_04_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_04%2F21_4012_04_ORTHO%2F21_4012_04_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-06-30T19:53:00Z": {
+        "layers": {
+          "Dem 21_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_05%2F21_4012_05_DEM%2F21_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_05%2F21_4012_05_ORTHO%2F21_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-07-12T19:45:00Z": {
+        "layers": {
+          "Dem 21_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_06%2F21_4012_06_DEM%2F21_4012_06_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_06%2F21_4012_06_ORTHO%2F21_4012_06_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-07-29T20:08:00Z": {
+        "layers": {
+          "Dem 21_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_07%2F21_4012_07_DEM%2F21_4012_07_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_07%2F21_4012_07_ORTHO%2F21_4012_07_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-09-16T23:42:00Z": {
+        "layers": {
+          "Dem 21_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_08%2F21_4012_08_DEM%2F21_4012_08_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_08%2F21_4012_08_ORTHO%2F21_4012_08_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-10-08T22:47:00Z": {
+        "layers": {
+          "Dem 21_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_09%2F21_4012_09_DEM%2F21_4012_09_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_09%2F21_4012_09_ORTHO%2F21_4012_09_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-10-19T20:55:00Z": {
+        "layers": {
+          "Dem 21_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_10%2F21_4012_10_DEM%2F21_4012_10_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F21_4012_10%2F21_4012_10_ORTHO%2F21_4012_10_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-02-25T23:46:00Z": {
+        "layers": {
+          "Dem 22_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_01%2F22_4012_01_DEM%2F22_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_01%2F22_4012_01_ORTHO%2F22_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-04-07T21:29:00Z": {
+        "layers": {
+          "Dem 22_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_02%2F22_4012_02_DEM%2F22_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_02%2F22_4012_02_ORTHO%2F22_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-05-22T20:24:00Z": {
+        "layers": {
+          "Dem 22_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_03%2F22_4012_03_DEM%2F22_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_03%2F22_4012_03_ORTHO%2F22_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-06-25T15:05:00Z": {
+        "layers": {
+          "Dem 22_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_05%2F22_4012_05_DEM%2F22_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_05%2F22_4012_05_ORTHO%2F22_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-07-22T00:06:00Z": {
+        "layers": {
+          "Dem 22_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_06%2F22_4012_06_DEM%2F22_4012_06_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_06%2F22_4012_06_ORTHO%2F22_4012_06_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-08-07T20:40:00Z": {
+        "layers": {
+          "Dem 22_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_07%2F22_4012_07_DEM%2F22_4012_07_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_07%2F22_4012_07_ORTHO%2F22_4012_07_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-08-23T17:10:00Z": {
+        "layers": {
+          "Dem 22_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_08%2F22_4012_08_DEM%2F22_4012_08_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_08%2F22_4012_08_ORTHO%2F22_4012_08_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-09-10T17:04:00Z": {
+        "layers": {
+          "Dem 22_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_09%2F22_4012_09_DEM%2F22_4012_09_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_09%2F22_4012_09_ORTHO%2F22_4012_09_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-09-21T20:15:00Z": {
+        "layers": {
+          "Dem 22_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_10%2F22_4012_10_DEM%2F22_4012_10_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_10%2F22_4012_10_ORTHO%2F22_4012_10_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-10-08T20:15:00Z": {
+        "layers": {
+          "Dem 22_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_11%2F22_4012_11_DEM%2F22_4012_11_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_11%2F22_4012_11_ORTHO%2F22_4012_11_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-10-18T18:11:00Z": {
+        "layers": {
+          "Dem 22_4012_12": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_12%2F22_4012_12_DEM%2F22_4012_12_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4012_12": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F22_4012_12%2F22_4012_12_ORTHO%2F22_4012_12_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-03-17T19:15:00Z": {
+        "layers": {
+          "Dem 23_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_01%2F23_4012_01_DEM%2F23_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_01%2F23_4012_01_ORTHO%2F23_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-04-27T21:27:00Z": {
+        "layers": {
+          "Dem 23_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_02%2F23_4012_02_DEM%2F23_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_02%2F23_4012_02_ORTHO%2F23_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-05-16T21:49:00Z": {
+        "layers": {
+          "Dem 23_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_03%2F23_4012_03_DEM%2F23_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_03%2F23_4012_03_ORTHO%2F23_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-06-03T20:38:00Z": {
+        "layers": {
+          "Dem 23_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_04%2F23_4012_04_DEM%2F23_4012_04_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_04%2F23_4012_04_ORTHO%2F23_4012_04_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-06-04T20:21:00Z": {
+        "layers": {
+          "Dem 23_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_05%2F23_4012_05_DEM%2F23_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_05%2F23_4012_05_ORTHO%2F23_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-07-02T20:44:00Z": {
+        "layers": {
+          "Dem 23_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_06%2F23_4012_06_DEM%2F23_4012_06_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_06": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_06%2F23_4012_06_ORTHO%2F23_4012_06_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-07-20T20:10:00Z": {
+        "layers": {
+          "Dem 23_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_07%2F23_4012_07_DEM%2F23_4012_07_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_07": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_07%2F23_4012_07_ORTHO%2F23_4012_07_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-08-16T20:41:00Z": {
+        "layers": {
+          "Dem 23_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_08%2F23_4012_08_DEM%2F23_4012_08_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_08": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_08%2F23_4012_08_ORTHO%2F23_4012_08_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-09-16T23:35:00Z": {
+        "layers": {
+          "Dem 23_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_09%2F23_4012_09_DEM%2F23_4012_09_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_09": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_09%2F23_4012_09_ORTHO%2F23_4012_09_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-10-01T20:11:00Z": {
+        "layers": {
+          "Dem 23_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_10%2F23_4012_10_DEM%2F23_4012_10_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_10": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_10%2F23_4012_10_ORTHO%2F23_4012_10_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-10-07T20:17:00Z": {
+        "layers": {
+          "Dem 23_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_11%2F23_4012_11_DEM%2F23_4012_11_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4012_11": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F23_4012_11%2F23_4012_11_ORTHO%2F23_4012_11_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2024-03-19T23:19:00Z": {
+        "layers": {
+          "Dem 24_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_01%2F24_4012_01_DEM%2F24_4012_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 24_4012_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_01%2F24_4012_01_ORTHO%2F24_4012_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2024-04-05T20:04:00Z": {
+        "layers": {
+          "Dem 24_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_02%2F24_4012_02_DEM%2F24_4012_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 24_4012_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_02%2F24_4012_02_ORTHO%2F24_4012_02_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2024-04-19T22:40:00Z": {
+        "layers": {
+          "Dem 24_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_03%2F24_4012_03_DEM%2F24_4012_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 24_4012_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_03%2F24_4012_03_ORTHO%2F24_4012_03_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2024-05-11T20:17:00Z": {
+        "layers": {
+          "Dem 24_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_04%2F24_4012_04_DEM%2F24_4012_04_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 24_4012_04": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_04%2F24_4012_04_ORTHO%2F24_4012_04_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2024-06-06T18:39:00Z": {
+        "layers": {
+          "Dem 24_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_05%2F24_4012_05_DEM%2F24_4012_05_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 24_4012_05": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4012_PlaceGlacier%2F.%2F24_4012_05%2F24_4012_05_ORTHO%2F24_4012_05_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      }
     },
     "bounds": [
       -122.65056639899996,
@@ -166,27 +240,37 @@
   "3030_ElliotCreekLandslide": {
     "id": 2,
     "name": "3030_ElliotCreekLandslide",
-    "layers": {
-      "Aoi 21_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_01%2F21_3030_01_AOI%2F21_3030_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_01%2F21_3030_01_DEM%2F21_3030_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_01%2F21_3030_01_ORTHO%2F21_3030_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_01%2F21_3030_01_LASER%2F21_3030_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_3030_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_02%2F21_3030_02_AOI%2F21_3030_02_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_3030_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_02%2F21_3030_02_DEM%2F21_3030_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_3030_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_02%2F21_3030_02_ORTHO%2F21_3030_02_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_3030_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_02%2F21_3030_02_LASER%2F21_3030_02_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 21_3030_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_03%2F21_3030_03_AOI%2F21_3030_03_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 21_3030_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_03%2F21_3030_03_DEM%2F21_3030_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 21_3030_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_03%2F21_3030_03_ORTHO%2F21_3030_03_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 21_3030_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_03%2F21_3030_03_LASER%2F21_3030_03_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F22_3030_01%2F22_3030_01_AOI%2F22_3030_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F22_3030_01%2F22_3030_01_DEM%2F22_3030_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F22_3030_01%2F22_3030_01_ORTHO%2F22_3030_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F22_3030_01%2F22_3030_01_LASER%2F22_3030_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F23_3030_01%2F23_3030_01_AOI%2F23_3030_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F23_3030_01%2F23_3030_01_DEM%2F23_3030_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F23_3030_01%2F23_3030_01_ORTHO%2F23_3030_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F23_3030_01%2F23_3030_01_LASER%2F23_3030_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true"
+    "dates": {
+      "2021-04-17T01:27:00Z": {
+        "layers": {
+          "Dem 21_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_01%2F21_3030_01_DEM%2F21_3030_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_01%2F21_3030_01_ORTHO%2F21_3030_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-07-13T21:35:00Z": {
+        "layers": {
+          "Dem 21_3030_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_02%2F21_3030_02_DEM%2F21_3030_02_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_3030_02": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_02%2F21_3030_02_ORTHO%2F21_3030_02_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2021-10-11T23:48:00Z": {
+        "layers": {
+          "Dem 21_3030_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_03%2F21_3030_03_DEM%2F21_3030_03_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 21_3030_03": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F21_3030_03%2F21_3030_03_ORTHO%2F21_3030_03_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-07-20T21:44:00Z": {
+        "layers": {
+          "Dem 22_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F22_3030_01%2F22_3030_01_DEM%2F22_3030_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F22_3030_01%2F22_3030_01_ORTHO%2F22_3030_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-05-16T20:23:00Z": {
+        "layers": {
+          "Dem 23_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F23_3030_01%2F23_3030_01_DEM%2F23_3030_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_3030_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F3030_ElliotCreekLandslide%2F.%2F23_3030_01%2F23_3030_01_ORTHO%2F23_3030_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      }
     },
     "bounds": [
       -124.82478511829665,
@@ -202,19 +286,25 @@
   "4028_MtRobsonPark": {
     "id": 3,
     "name": "4028_MtRobsonPark",
-    "layers": {
-      "Aoi 20_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F20_4028_01%2F20_4028_01_AOI%2F20_4028_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 20_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F20_4028_01%2F20_4028_01_DEM%2F20_4028_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 20_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F20_4028_01%2F20_4028_01_ORTHO%2F20_4028_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 20_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F20_4028_01%2F20_4028_01_LASER%2F20_4028_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 22_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F22_4028_01%2F22_4028_01_AOI%2F22_4028_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 22_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F22_4028_01%2F22_4028_01_DEM%2F22_4028_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 22_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F22_4028_01%2F22_4028_01_ORTHO%2F22_4028_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 22_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F22_4028_01%2F22_4028_01_LASER%2F22_4028_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Aoi 23_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F23_4028_01%2F23_4028_01_AOI%2F23_4028_01_AOI.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Dem 23_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F23_4028_01%2F23_4028_01_DEM%2F23_4028_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
-      "Ortho 23_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F23_4028_01%2F23_4028_01_ORTHO%2F23_4028_01_ORTHO.json&bidx=1&bidx=2&bidx=3",
-      "Laser 23_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F23_4028_01%2F23_4028_01_LASER%2F23_4028_01_LASER.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true"
+    "dates": {
+      "2020-09-10T17:20:00Z": {
+        "layers": {
+          "Dem 20_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F20_4028_01%2F20_4028_01_DEM%2F20_4028_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 20_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F20_4028_01%2F20_4028_01_ORTHO%2F20_4028_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2022-08-18T20:33:00Z": {
+        "layers": {
+          "Dem 22_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F22_4028_01%2F22_4028_01_DEM%2F22_4028_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 22_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F22_4028_01%2F22_4028_01_ORTHO%2F22_4028_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      },
+      "2023-09-14T17:51:00Z": {
+        "layers": {
+          "Dem 23_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F23_4028_01%2F23_4028_01_DEM%2F23_4028_01_DEM.json&colormap_name=gist_earth&rescale=-10%2C2500&nodata=-340282346638528859811704183484516925440&bidx=1&resampling=nearest&return_mask=true",
+          "Ortho 23_4028_01": "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}?url=https%3A%2F%2Fpublic-aco-data.s3.amazonaws.com%2F4028_MtRobsonPark%2F.%2F23_4028_01%2F23_4028_01_ORTHO%2F23_4028_01_ORTHO.json&bidx=1&bidx=2&bidx=3"
+        }
+      }
     },
     "bounds": [
       -119.4162426150377,

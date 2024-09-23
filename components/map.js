@@ -7,9 +7,9 @@ import {
   getTransectElevationDiff,
   getElevation,
 } from "../utils/elevation";
-import { getLayersForSite, getTilesetUrl } from "../utils/siteData";
+import { getTilesetUrl } from "../utils/siteData";
 import { debounce } from "../utils/functions";
-import { getBoundsForSite } from "../utils/siteUtils";
+import { getBoundsForSite, getLayersForSite } from "../utils/siteUtils";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
 mapboxgl.accessToken =
@@ -24,6 +24,8 @@ export default function Map({
   compareChangeEnabled,
   onTransectDataChange,
 }) {
+  console.log(selectedSite, selectedLayer);
+
   const mapContainer = useRef(null);
   const map = useRef(null);
   const draw = useRef(null);
@@ -140,6 +142,7 @@ export default function Map({
     }
 
     const layers = getLayersForSite(selectedSite);
+    console.log(layers);
 
     // Remove existing layers
     Object.keys(layers).forEach((layer) => {
@@ -153,6 +156,8 @@ export default function Map({
 
     // Add new layers
     Object.entries(layers).forEach(([layerName, sourceUrl]) => {
+      console.log(sourceUrl);
+
       map.current.addSource(layerName, {
         type: "raster",
         tiles: [sourceUrl],

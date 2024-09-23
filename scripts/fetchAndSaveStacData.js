@@ -84,7 +84,7 @@ async function fetchStacData() {
       siteData[siteName] = {
         id: siteId++,
         name: siteName,
-        layers: {},
+        dates: {},
         bounds: null,
         lngLat: null,
       };
@@ -97,6 +97,13 @@ async function fetchStacData() {
           )}${childLink.href}`;
           const collection = await fetchJson(collectionUrl);
           const collectionId = collection.id;
+          const collectionDate = collection.extent.temporal.interval[0][0];
+
+          if (!siteData[siteName].dates[collectionDate]) {
+            siteData[siteName].dates[collectionDate] = {
+              layers: {},
+            };
+          }
 
           for (const item of collection.links) {
             if (item.rel === "item") {
@@ -104,7 +111,9 @@ async function fetchStacData() {
               const itemName = itemParts[itemParts.length - 2];
               const itemType = itemName.split("_").pop().toLowerCase();
 
-              if (["aoi", "dem", "ortho", "laser"].includes(itemType)) {
+              if (
+                ["dem", "ortho", "HS", "contour", "slope"].includes(itemType)
+              ) {
                 const layerName = `${
                   itemType.charAt(0).toUpperCase() + itemType.slice(1)
                 } ${collectionId}`;
@@ -113,12 +122,14 @@ async function fetchStacData() {
                   ""
                 )}${itemName}/${item.href.split("/").pop()}`;
 
-                siteData[siteName].layers[layerName] = createLayerConfig(
-                  itemType === "ortho" ? "ortho" : "dem",
-                  s3Path
-                );
+                siteData[siteName].dates[collectionDate].layers[layerName] =
+                  createLayerConfig(
+                    itemType === "ortho" ? "ortho" : "dem",
+                    s3Path
+                  );
               }
             }
+
             // Add bounds and lngLat
             if (
               collection.extent &&
@@ -126,7 +137,6 @@ async function fetchStacData() {
               collection.extent.spatial.bbox
             ) {
               const bbox = collection.extent.spatial.bbox[0];
-              console.log(bbox);
 
               siteData[siteName].bounds = bbox;
               siteData[siteName].lngLat = [

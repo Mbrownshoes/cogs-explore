@@ -33,10 +33,7 @@ export default function Home() {
   const initialLoadDone = useRef(false);
 
   useEffect(() => {
-    console.log(selectedSite);
-
     const layers = getLayersForSite(selectedSite);
-    console.log(layers);
     setLayersForSelectedSite(layers);
     setSelectedLayer(Object.keys(layers)[0]); //set initial layer
   }, [selectedSite]);
