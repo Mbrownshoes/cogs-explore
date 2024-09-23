@@ -7,7 +7,7 @@ import {
   getTransectElevationDiff,
   getElevation,
 } from "../utils/elevation";
-import { layersForSite, getTilesetUrl } from "../utils/siteData";
+import { getLayersForSite, getTilesetUrl } from "../utils/siteData";
 import { debounce } from "../utils/functions";
 import { getBoundsForSite } from "../utils/siteUtils";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
@@ -139,7 +139,7 @@ export default function Map({
       return;
     }
 
-    const layers = layersForSite(selectedSite);
+    const layers = getLayersForSite(selectedSite);
 
     // Remove existing layers
     Object.keys(layers).forEach((layer) => {

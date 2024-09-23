@@ -13,7 +13,7 @@ import ElevationChart from "./chart.js"; // Adjust the import path as needed
 const Map = dynamic(() => import("../components/map"), { ssr: false });
 
 export default function Home() {
-  const [selectedSite, setSelectedSite] = useState("Place Glacier");
+  const [selectedSite, setSelectedSite] = useState(1);
   const [selectedLayer, setSelectedLayer] = useState("");
   const [layersForSelectedSite, setLayersForSelectedSite] = useState({});
   const [elevation, setElevation] = useState(null);
@@ -36,7 +36,7 @@ export default function Home() {
     console.log(selectedSite);
 
     const layers = getLayersForSite(selectedSite);
-
+    console.log(layers);
     setLayersForSelectedSite(layers);
     setSelectedLayer(Object.keys(layers)[0]); //set initial layer
   }, [selectedSite]);
@@ -60,6 +60,7 @@ export default function Home() {
     // You can add any additional logic here, such as updating other parts of your UI
     // or triggering other functions based on the new transect data
   }, []);
+  console.log(selectedLayer);
 
   return (
     <main className="w-screen min-h-screen">
