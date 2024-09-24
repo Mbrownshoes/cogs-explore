@@ -5,7 +5,6 @@ import axios from "axios";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 const BASE_URL = "https://public-aco-data.s3.amazonaws.com/stac";
 const TILE_BASE_URL = "https://goose.hakai.org/titiler/cog/tiles/{z}/{x}/{y}";
 const S3_BASE_URL = "https://public-aco-data.s3.amazonaws.com";

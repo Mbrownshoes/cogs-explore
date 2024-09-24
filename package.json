@@ -2,14 +2,14 @@
   "name": "cog-map-demo",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next export",
     "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fetch-stac-data": "node scripts/fetchAndSaveStacData.mjs"
   },
   "dependencies": {
     "@mapbox/mapbox-gl-draw": "^1.4.3",
