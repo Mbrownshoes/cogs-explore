@@ -114,19 +114,30 @@ async function fetchStacData() {
               if (
                 ["dem", "ortho", "HS", "contour", "slope"].includes(itemType)
               ) {
-                const layerName = `${
-                  itemType.charAt(0).toUpperCase() + itemType.slice(1)
-                } ${collectionId}`;
                 const s3Path = `${link.title}/${childLink.href.replace(
                   "collection.json",
                   ""
                 )}${itemName}/${item.href.split("/").pop()}`;
+
+                const layerName = `${
+                  itemType.charAt(0).toUpperCase() + itemType.slice(1)
+                } ${collectionId}`;
 
                 siteData[siteName].dates[collectionDate].layers[layerName] =
                   createLayerConfig(
                     itemType === "ortho" ? "ortho" : "dem",
                     s3Path
                   );
+
+                // Add Hillshade and Contour layers for DEM
+                if (itemType === "dem") {
+                  siteData[siteName].dates[collectionDate].layers[
+                    `Hillshade ${collectionId}`
+                  ] = createLayerConfig("hillshade", s3Path);
+                  siteData[siteName].dates[collectionDate].layers[
+                    `Contour ${collectionId}`
+                  ] = createLayerConfig("contour", s3Path);
+                }
               }
             }
 
